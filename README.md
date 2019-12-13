@@ -61,7 +61,7 @@ Project Data
 
 * VERSION: 00.01
 
-* RELEASE: 00.01.033
+* RELEASE: 00.01.037
 
 * STATUS: beta
 
@@ -136,4 +136,3 @@ ToDo:
 
 * test Windows10IoT-Core
 
-...

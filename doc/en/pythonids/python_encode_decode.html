@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -207,10 +207,10 @@ This in particular makes in multi-language applications excessive use of the cha
 and string encoding and decoding.
 The following definitions apply:</p>
 <ul class="simple">
-<li><strong>encoding</strong>
-Encrypt into the direction of machine language</li>
-<li><strong>decoding</strong>
-Decrypt into the direction of human language</li>
+<li><p><strong>encoding</strong>
+Encrypt into the direction of machine language</p></li>
+<li><p><strong>decoding</strong>
+Decrypt into the direction of human language</p></li>
 </ul>
 <p>The encoding and decoding is one of the major changes from Python2 to Python3.
 This causes for the porting to Python3 of several opensource projects larger
@@ -222,31 +222,31 @@ The sub-processes are commonly designed as a stack of conversion routines where 
 the machine language, and the top layer the written loacalized human language.
 The stack itself defines commonly the sublayers of the syntactic information units:</p>
 <ul class="simple">
-<li><em>String</em> - groups of characters</li>
-<li><em>Multilingual Character</em> - one or more bytes with special mapping onto complex human language characters,
-most popular <em>Unicode</em></li>
-<li><em>Character</em> - a byte with special mapping onto a human language character</li>
-<li><em>Byte</em> - group of bits</li>
-<li><em>Bit</em></li>
+<li><p><em>String</em> - groups of characters</p></li>
+<li><p><em>Multilingual Character</em> - one or more bytes with special mapping onto complex human language characters,
+most popular <em>Unicode</em></p></li>
+<li><p><em>Character</em> - a byte with special mapping onto a human language character</p></li>
+<li><p><em>Byte</em> - group of bits</p></li>
+<li><p><em>Bit</em></p></li>
 </ul>
 </div>
 <div class="section" id="python2">
 <h2>4.7.2. Python2<a class="headerlink" href="#python2" title="Permalink to this headline">¶</a></h2>
 <p>Python2 distinguishes basically the encoding stack into <strong>5-encoding-layers</strong>.</p>
 <ol class="arabic simple" start="4">
-<li><strong>unicode</strong> - Strings a multi-character arrays</li>
+<li><p><strong>unicode</strong> - Strings a multi-character arrays</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><strong>str</strong> - Strings a single-character arrays</li>
+<li><p><strong>str</strong> - Strings a single-character arrays</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><strong>raw</strong> - characters in arrays - <em>ASCII</em> / <em>order</em></li>
+<li><p><strong>raw</strong> - characters in arrays - <em>ASCII</em> / <em>order</em></p></li>
 </ol>
 <ol class="arabic simple">
-<li>bytes as <strong>int</strong> -  bit groups</li>
+<li><p>bytes as <strong>int</strong> -  bit groups</p></li>
 </ol>
 <ol class="arabic simple" start="0">
-<li>bits - bits which may not, but could be used in general raw processing</li>
+<li><p>bits - bits which may not, but could be used in general raw processing</p></li>
 </ol>
 <p><a class="reference internal" href="_images/encoding-decoding-hierarchy-python2.png"><img alt="encodingdecodinghierarchypython2" src="_images/encoding-decoding-hierarchy-python2.png" style="width: 650px;" /></a>
 <a class="reference external" href="_static/encoding-decoding-hierarchy-python2.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></p>
@@ -259,16 +259,16 @@ interface.</p>
 <h2>4.7.3. Python3<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h2>
 <p>Python3 distinguishes basically the encoding stack into <strong>4-encoding-layers</strong>.</p>
 <ol class="arabic simple" start="3">
-<li><strong>str</strong> - Strings a unicode character arrays, either one or more characters</li>
+<li><p><strong>str</strong> - Strings a unicode character arrays, either one or more characters</p></li>
 </ol>
 <ol class="arabic simple" start="2">
-<li><strong>bytes</strong> - characters in arrays - <em>ASCII</em> / <em>order</em></li>
+<li><p><strong>bytes</strong> - characters in arrays - <em>ASCII</em> / <em>order</em></p></li>
 </ol>
 <ol class="arabic simple">
-<li>bytes as <strong>int</strong> -  bit groups</li>
+<li><p>bytes as <strong>int</strong> -  bit groups</p></li>
 </ol>
 <ol class="arabic simple" start="0">
-<li>bits - bits which may not, but could be used in general raw processing</li>
+<li><p>bits - bits which may not, but could be used in general raw processing</p></li>
 </ol>
 <p><a class="reference internal" href="_images/encoding-decoding-hierarchy-python3.png"><img alt="encodingdecodinghierarchypython3" src="_images/encoding-decoding-hierarchy-python3.png" style="width: 650px;" /></a>
 <a class="reference external" href="_static/encoding-decoding-hierarchy-python3.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></p>
@@ -315,13 +315,13 @@ constants.</p>
 </pre></div>
 </td></tr></table></div>
 <ul>
-<li><p class="first"><strong>PYV35Plus</strong></p>
+<li><p><strong>PYV35Plus</strong></p>
 <p>Provides a constant with the values <em>True</em> for Python3.5+, and <em>False</em> else.</p>
 </li>
-<li><p class="first"><strong>unicode</strong></p>
+<li><p><strong>unicode</strong></p>
 <p>Remaps the <em>unicode</em> class onto the <em>str</em> class.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The reassignment of the Python build-in classes is a casual and smart approach,
 for the porting and shared code between Python2 and Python3, e.g.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>  <span class="c1"># 2 =&gt; 3</span>
@@ -370,12 +370,12 @@ to use ste standard <em>str</em> as a literal replacement for the <em>unicode</e
 <span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mi">4</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">So also in the case of using e.g. <em>functools.partial()</em>, the prepended char ‘b’ as type information
+<p>So also in the case of using e.g. <em>functools.partial()</em>, the prepended char ‘b’ as type information
 breaks the current standard constructor of the <em>str</em> class.
-See also ‘Issue32078 - string result of str(bytes()) in Python3’ <a class="reference internal" href="references.html#issue32078" id="id1">[ISSUE32078]</a>.</p>
+See also ‘Issue32078 - string result of str(bytes()) in Python3’ <a class="reference internal" href="references.html#issue32078" id="id1"><span>[ISSUE32078]</span></a>.</p>
 </div>
 </li>
-<li><p class="first"><strong>ISSTR</strong></p>
+<li><p><strong>ISSTR</strong></p>
 <p>Defines a tuple of string representation classes for the dynamic type check.</p>
 </li>
 </ul>
@@ -386,101 +386,101 @@ for complex text processing which may include arbitrary languages including proc
 <div class="section" id="call-interfaces">
 <h2>4.7.5. Call Interfaces<a class="headerlink" href="#call-interfaces" title="Permalink to this headline">¶</a></h2>
 <p>The following major interfaces are provided for encoding and decoding.</p>
-<div class="indextab"><table border="1" class="docutils">
+<div class="indextab"><table class="docutils align-default">
 <colgroup>
-<col width="6%" />
-<col width="3%" />
-<col width="6%" />
-<col width="21%" />
-<col width="31%" />
-<col width="32%" />
+<col style="width: 6%" />
+<col style="width: 3%" />
+<col style="width: 6%" />
+<col style="width: 21%" />
+<col style="width: 31%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">Python2</th>
-<th class="head">Python3</th>
-<th class="head">Remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>Python2</p></th>
+<th class="head"><p>Python3</p></th>
+<th class="head"><p>Remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>bytes</td>
-<td>=&gt;</td>
-<td>str</td>
-<td>str(x), x.decode(‘ascii’)</td>
-<td>x.decode(‘ascii’), x.decode(‘utf_8’)</td>
-<td>2:bytes==str</td>
+<tbody>
+<tr class="row-even"><td><p>bytes</p></td>
+<td><p>=&gt;</p></td>
+<td><p>str</p></td>
+<td><p>str(x), x.decode(‘ascii’)</p></td>
+<td><p>x.decode(‘ascii’), x.decode(‘utf_8’)</p></td>
+<td><p>2:bytes==str</p></td>
 </tr>
-<tr class="row-odd"><td>bytes</td>
-<td>=&gt;</td>
-<td>unicode</td>
-<td>x.decode(‘utf_8’)</td>
-<td>arg = str(arg_b,’utf_8’), x.decode(‘utf_8’)</td>
-<td>3: NOK: str(arg_b) -&gt; str: b’\u0041\u0042/’</td>
+<tr class="row-odd"><td><p>bytes</p></td>
+<td><p>=&gt;</p></td>
+<td><p>unicode</p></td>
+<td><p>x.decode(‘utf_8’)</p></td>
+<td><p>arg = str(arg_b,’utf_8’), x.decode(‘utf_8’)</p></td>
+<td><p>3: NOK: str(arg_b) -&gt; str: b’\u0041\u0042/’</p></td>
 </tr>
-<tr class="row-even"><td>raw</td>
-<td>=&gt;</td>
-<td>bytes</td>
-<td>bytes(x)</td>
-<td>bytes(x, ‘ascii’), x.encode(‘ascii’)</td>
-<td>2:bytes==str, 3:bytes==raw-str</td>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>=&gt;</p></td>
+<td><p>bytes</p></td>
+<td><p>bytes(x)</p></td>
+<td><p>bytes(x, ‘ascii’), x.encode(‘ascii’)</p></td>
+<td><p>2:bytes==str, 3:bytes==raw-str</p></td>
 </tr>
-<tr class="row-odd"><td>raw</td>
-<td>=&gt;</td>
-<td>str</td>
-<td>str(x)</td>
-<td>str(x), x.decode(‘utf_8’)</td>
-<td>2:bytes==str, 3:bytes==raw-str</td>
+<tr class="row-odd"><td><p>raw</p></td>
+<td><p>=&gt;</p></td>
+<td><p>str</p></td>
+<td><p>str(x)</p></td>
+<td><p>str(x), x.decode(‘utf_8’)</p></td>
+<td><p>2:bytes==str, 3:bytes==raw-str</p></td>
 </tr>
-<tr class="row-even"><td>raw</td>
-<td>=&gt;</td>
-<td>unicode</td>
-<td>unicode(x)</td>
-<td>str(x), x.decode(‘utf_8’)</td>
-<td>2:bytes==str, 3:bytes==raw-str</td>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>=&gt;</p></td>
+<td><p>unicode</p></td>
+<td><p>unicode(x)</p></td>
+<td><p>str(x), x.decode(‘utf_8’)</p></td>
+<td><p>2:bytes==str, 3:bytes==raw-str</p></td>
 </tr>
-<tr class="row-odd"><td>str</td>
-<td>=&gt;</td>
-<td>bytes</td>
-<td>x.encode(‘ascii’)</td>
-<td>bytes(x, ‘ascii’), x.encode(‘ascii’)</td>
-<td>2:bytes==str</td>
+<tr class="row-odd"><td><p>str</p></td>
+<td><p>=&gt;</p></td>
+<td><p>bytes</p></td>
+<td><p>x.encode(‘ascii’)</p></td>
+<td><p>bytes(x, ‘ascii’), x.encode(‘ascii’)</p></td>
+<td><p>2:bytes==str</p></td>
 </tr>
-<tr class="row-even"><td>str</td>
-<td>=&gt;</td>
-<td>raw</td>
-<td>x.encode(‘ascii’)</td>
-<td>bytes(x, ‘ascii’), x.encode(‘ascii’)</td>
-<td>3:bytes==raw-str</td>
+<tr class="row-even"><td><p>str</p></td>
+<td><p>=&gt;</p></td>
+<td><p>raw</p></td>
+<td><p>x.encode(‘ascii’)</p></td>
+<td><p>bytes(x, ‘ascii’), x.encode(‘ascii’)</p></td>
+<td><p>3:bytes==raw-str</p></td>
 </tr>
-<tr class="row-odd"><td>str</td>
-<td>=&gt;</td>
-<td>unicode</td>
-<td>unicode(x), x.decode(‘utf_8’)</td>
-<td>–</td>
-<td>3: str == unicode</td>
+<tr class="row-odd"><td><p>str</p></td>
+<td><p>=&gt;</p></td>
+<td><p>unicode</p></td>
+<td><p>unicode(x), x.decode(‘utf_8’)</p></td>
+<td><p>–</p></td>
+<td><p>3: str == unicode</p></td>
 </tr>
-<tr class="row-even"><td>unicode</td>
-<td>=&gt;</td>
-<td>bytes</td>
-<td>x.encode(‘ascii’)</td>
-<td>x.encode(‘ascii’), bytes(‘ascii’)</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>unicode</p></td>
+<td><p>=&gt;</p></td>
+<td><p>bytes</p></td>
+<td><p>x.encode(‘ascii’)</p></td>
+<td><p>x.encode(‘ascii’), bytes(‘ascii’)</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>unicode</td>
-<td>=&gt;</td>
-<td>str</td>
-<td>x.encode(‘ascii’)</td>
-<td>–</td>
-<td>3: str == unicode</td>
+<tr class="row-odd"><td><p>unicode</p></td>
+<td><p>=&gt;</p></td>
+<td><p>str</p></td>
+<td><p>x.encode(‘ascii’)</p></td>
+<td><p>–</p></td>
+<td><p>3: str == unicode</p></td>
 </tr>
 </tbody>
 </table>
-</div><p>See <a class="reference internal" href="references.html#codecsstandard" id="id2">[codecsStandard]</a> for standard codecs.</p>
+</div><p>See <a class="reference internal" href="references.html#codecsstandard" id="id2"><span>[codecsStandard]</span></a> for standard codecs.</p>
 <p>Special Remarks:</p>
 <ul>
-<li><p class="first">bytes =&gt; str - Python2</p>
+<li><p>bytes =&gt; str - Python2</p>
 <p>Because <em>bytes</em> is a str, the <em>x.decode(‘ascii’)</em> call results in unitype.</p>
 </li>
 </ul>
@@ -492,46 +492,46 @@ The <em>str</em> and <em>unicode</em> are in Python3 the same, while in Python2
 these are different types.
 The type <em>bytes</em> has to be converted into an <em>str</em> for Python3, while it is the same type
 as <em>str</em>, thus could not be distinguished.</p>
-<div class="indextab"><table border="1" class="docutils">
+<div class="indextab"><table class="docutils align-default">
 <colgroup>
-<col width="14%" />
-<col width="20%" />
-<col width="14%" />
-<col width="22%" />
-<col width="30%" />
+<col style="width: 14%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 22%" />
+<col style="width: 30%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Input</th>
-<th class="head">API</th>
-<th class="head">Output</th>
-<th class="head">&#160;</th>
-<th class="head">Remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>API</p></th>
+<th class="head"><p>Output</p></th>
+<th class="head"></th>
+<th class="head"><p>Remarks</p></th>
 </tr>
-<tr class="row-even"><th class="head">&#160;</th>
-<th class="head">&#160;</th>
-<th class="head">Python2</th>
-<th class="head">Python3</th>
-<th class="head">&#160;</th>
+<tr class="row-even"><th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>Python2</p></th>
+<th class="head"><p>Python3</p></th>
+<th class="head"></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-odd"><td>str</td>
-<td>str</td>
-<td>str</td>
-<td>str(unicode)</td>
-<td>3: unicode == str</td>
+<tbody>
+<tr class="row-odd"><td><p>str</p></td>
+<td><p>str</p></td>
+<td><p>str</p></td>
+<td><p>str(unicode)</p></td>
+<td><p>3: unicode == str</p></td>
 </tr>
-<tr class="row-even"><td>raw</td>
-<td>raw</td>
-<td>str</td>
-<td>str(unicode)</td>
-<td>raw str</td>
+<tr class="row-even"><td><p>raw</p></td>
+<td><p>raw</p></td>
+<td><p>str</p></td>
+<td><p>str(unicode)</p></td>
+<td><p>raw str</p></td>
 </tr>
-<tr class="row-odd"><td>unicode</td>
-<td>unicode/str</td>
-<td>str</td>
-<td>str(unicode)</td>
-<td>3: unicode == str</td>
+<tr class="row-odd"><td><p>unicode</p></td>
+<td><p>unicode/str</p></td>
+<td><p>str</p></td>
+<td><p>str(unicode)</p></td>
+<td><p>3: unicode == str</p></td>
 </tr>
 </tbody>
 </table>
@@ -562,7 +562,7 @@ The input type is kept for the output values, or choosen as close to the origina
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

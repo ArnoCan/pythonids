@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -211,7 +211,7 @@ The current major step is the phase of the final switch over from <em>Python2</e
 The syntax is hereby defined by the <em>major</em> and <em>minor</em> version numbers - an optional additional third number - and provided as
 the main and reference implementation by the distribution <em>CPython</em> of the <em>Python Foundation</em>.
 Thus the versions of the <em>CPython</em> distribution has the version numbering of the syntax revision,
-see <a class="reference internal" href="references.html#pep440" id="id1">[PEP440]</a>.
+see <a class="reference internal" href="references.html#pep440" id="id1"><span>[PEP440]</span></a>.
 The optional <em>micro</em> number is not available at the call interface - e.g. <em>python2</em>, <em>python2.7</em> - and normally
 at least in case of the reference implementation <em>CPython</em> not relevant for the syntax decision.</p>
 <p>The syntax - or better the APIs of the close to system level standard libraries changed from the release
@@ -256,22 +256,24 @@ The current supported value ranges are:</p>
 </div></blockquote>
 <p>This patttern requires in total 16bits, and provides the ranges:</p>
 <div class="math" id="equation-python-version-ranges">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-python-version-ranges" title="Permalink to this equation">¶</a></span><img src="_images/math/5cfbef07280a3bf699a8079476c536e30a239536.png" alt="\begin{split}
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-python-version-ranges" title="Permalink to this equation">¶</a></span><img src="_images/math/0606289a69add6b4f2eef3250404be3e995dd31b.png" alt="\begin{split}
 v(x_{major})&amp;: 0&lt;=i&lt;8\\
 v(x_{minor})&amp;: 0&lt;=i&lt;32\\
 v(x_{build})&amp;: 0&lt;=i&lt;256
 \end{split}"/></p>
 </div><p>which provides a range of:</p>
 <div class="math" id="equation-python-version-value-range">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-python-version-value-range" title="Permalink to this equation">¶</a></span><img src="_images/math/a8c4bf9d2c195be4c8777d538c54cd0fd00592a5.png" alt="Python0.0.0 &lt;= Px &lt;= Python7.31.255"/></p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-python-version-value-range" title="Permalink to this equation">¶</a></span><img src="_images/math/b89699d1f7c4e87cfcb669ca29c1b6b783d22d5d.png" alt="Python0.0.0 &lt;= Px &lt;= Python7.31.255"/></p>
 </div><p>The bitmask layout of the integer value is:</p>
 <blockquote>
-<div><a class="reference internal" href="_images/bitarray-python.png"><img alt="bitmaskpyvers" src="_images/bitarray-python.png" style="width: 300px;" /></a>
-<a class="reference external" href="_static/bitarray-python.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></div></blockquote>
+<div><p><a class="reference internal" href="_images/bitarray-python.png"><img alt="bitmaskpyvers" src="_images/bitarray-python.png" style="width: 300px;" /></a>
+<a class="reference external" href="_static/bitarray-python.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></p>
+</div></blockquote>
 <p>For example the version <em>Python-3.6.5</em> is represented as:</p>
 <blockquote>
-<div><a class="reference internal" href="_images/bitarray-python365.png"><img alt="bitmaskpyvers365" src="_images/bitarray-python365.png" style="width: 300px;" /></a>
-<a class="reference external" href="_static/bitarray-python365.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></div></blockquote>
+<div><p><a class="reference internal" href="_images/bitarray-python365.png"><img alt="bitmaskpyvers365" src="_images/bitarray-python365.png" style="width: 300px;" /></a>
+<a class="reference external" href="_static/bitarray-python365.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></p>
+</div></blockquote>
 <p>or as numeric representation:</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="mb">0b0110011000000101</span> <span class="o">=</span> <span class="mo">031405</span> <span class="o">=</span> <span class="mh">0x3305</span> <span class="o">=</span> <span class="mi">13061</span>
@@ -616,80 +618,80 @@ the changes of the Python interpreter.</p>
 <h2>4.2.2. Supported Python Releases<a class="headerlink" href="#supported-python-releases" title="Permalink to this headline">¶</a></h2>
 <p>The following Python interpreters and releases are used to veriy and test the code:</p>
 <blockquote>
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="31%" />
-<col width="14%" />
-<col width="14%" />
-<col width="41%" />
+<col style="width: 31%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 41%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Python</th>
-<th class="head">major</th>
-<th class="head">minor</th>
-<th class="head">distrel</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Python</p></th>
+<th class="head"><p>major</p></th>
+<th class="head"><p>minor</p></th>
+<th class="head"><p>distrel</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>CPython</td>
-<td>2</td>
-<td>7</td>
-<td>CPython-2.7</td>
+<tbody>
+<tr class="row-even"><td><p>CPython</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>CPython-2.7</p></td>
 </tr>
-<tr class="row-odd"><td>CPython</td>
-<td>3</td>
-<td>5+</td>
-<td>CPython-3.5+</td>
+<tr class="row-odd"><td><p>CPython</p></td>
+<td><p>3</p></td>
+<td><p>5+</p></td>
+<td><p>CPython-3.5+</p></td>
 </tr>
-<tr class="row-even"><td>CircuitPython</td>
-<td>3</td>
-<td>4</td>
-<td>CircuitPython-3.0+</td>
+<tr class="row-even"><td><p>CircuitPython</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>CircuitPython-3.0+</p></td>
 </tr>
-<tr class="row-odd"><td>Cython</td>
-<td>2</td>
-<td>7</td>
-<td>Cython-0.27+</td>
+<tr class="row-odd"><td><p>Cython</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>Cython-0.27+</p></td>
 </tr>
-<tr class="row-even"><td>Cython</td>
-<td>3</td>
-<td>0+</td>
-<td>Cython-3.0a3</td>
+<tr class="row-even"><td><p>Cython</p></td>
+<td><p>3</p></td>
+<td><p>0+</p></td>
+<td><p>Cython-3.0a3</p></td>
 </tr>
-<tr class="row-odd"><td>IronPython</td>
-<td>2</td>
-<td>7</td>
-<td>IronPython-2.7+</td>
+<tr class="row-odd"><td><p>IronPython</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>IronPython-2.7+</p></td>
 </tr>
-<tr class="row-even"><td>Jython</td>
-<td>2</td>
-<td>7</td>
-<td>Jython-2.7</td>
+<tr class="row-even"><td><p>Jython</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>Jython-2.7</p></td>
 </tr>
-<tr class="row-odd"><td>MicroPython</td>
-<td>3</td>
-<td>&#160;</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>MicroPython</p></td>
+<td><p>3</p></td>
+<td></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>PyPy</td>
-<td>2</td>
-<td>7</td>
-<td>PyPy-5.8+</td>
+<tr class="row-even"><td><p>PyPy</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>PyPy-5.8+</p></td>
 </tr>
-<tr class="row-odd"><td>PyPy</td>
-<td>3</td>
-<td>5+</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>PyPy</p></td>
+<td><p>3</p></td>
+<td><p>5+</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>iPython</td>
-<td>2</td>
-<td>7</td>
-<td>IPython-5.5+</td>
+<tr class="row-even"><td><p>iPython</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>IPython-5.5+</p></td>
 </tr>
-<tr class="row-odd"><td>iPython</td>
-<td>3</td>
-<td>5+</td>
-<td>IPython-6.3+</td>
+<tr class="row-odd"><td><p>iPython</p></td>
+<td><p>3</p></td>
+<td><p>5+</p></td>
+<td><p>IPython-6.3+</p></td>
 </tr>
 </tbody>
 </table>
@@ -702,20 +704,21 @@ the changes of the Python interpreter.</p>
 <h3>4.2.3.1. Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
 <p>The following constants provide pre-defined release values.</p>
 <blockquote>
-<div><a class="reference external" href="package_init.html#constants">PYV2 PYV27 PYV3 PYV32 PYV33 PYV34 PYV35 PYV36 PYV362 PYV365 PYV366 PYV367 PYV368 PYV369 PYV37 PYV371 PYV372 PYV373 PYV374 PYV375 PYV376 PYV38</a></div></blockquote>
+<div><p><a class="reference external" href="package_init.html#constants">PYV2 PYV27 PYV3 PYV32 PYV33 PYV34 PYV35 PYV36 PYV362 PYV365 PYV366 PYV367 PYV368 PYV369 PYV37 PYV371 PYV372 PYV373 PYV374 PYV375 PYV376 PYV38</a></p>
+</div></blockquote>
 </div>
 <div class="section" id="variables">
 <h3>4.2.3.2. Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>The provided variables are forseen to be uused by applications in fast and efficient numerical and boolean operations.</p>
 <ul>
-<li><p class="first"><a class="reference external" href="package_init.html#attributes">The 3-value Python final release of the current process in accordance to PEP440.</a> <a class="reference internal" href="references.html#pep440" id="id2">[PEP440]</a></p>
+<li><p><a class="reference external" href="package_init.html#attributes">The 3-value Python final release of the current process in accordance to PEP440.</a> <a class="reference internal" href="references.html#pep440" id="id2"><span>[PEP440]</span></a></p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYVxyz</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><a class="reference external" href="package_init.html#attributes">Attributes to adjust to current major Python version to Python3 vs. Python2.</a></p>
+<li><p><a class="reference external" href="package_init.html#attributes">Attributes to adjust to current major Python version to Python3 vs. Python2.</a></p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYV35Plus</span>       <span class="c1"># Python3.5+ - to be changed to 3.0+</span>
 <span class="n">PYV35Plus</span>     <span class="c1"># Python3.5+ - the safe constant</span>
@@ -731,31 +734,31 @@ the changes of the Python interpreter.</p>
 <h3>4.2.3.3. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="44%" />
-<col width="56%" />
+<col style="width: 44%" />
+<col style="width: 56%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">[docs]</th>
-<th class="head">[source]</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>[docs]</p></th>
+<th class="head"><p>[source]</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_str_to_num">decode_pysyntax_str_to_num</a></td>
-<td><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_str_to_num">pythonids.decode_pysyntax_str_to_num</a></td>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_str_to_num">decode_pysyntax_str_to_num</a></p></td>
+<td><p><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_str_to_num">pythonids.decode_pysyntax_str_to_num</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_str">decode_pysyntax_16bit_to_str</a></td>
-<td><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_str">pythonids.decode_pysyntax_16bit_to_str</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_str">decode_pysyntax_16bit_to_str</a></p></td>
+<td><p><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_str">pythonids.decode_pysyntax_16bit_to_str</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_tuple">decode_pysyntax_16bit_to_tuple</a></td>
-<td><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple">pythonids.decode_pysyntax_16bit_to_tuple</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_tuple">decode_pysyntax_16bit_to_tuple</a></p></td>
+<td><p><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple">pythonids.decode_pysyntax_16bit_to_tuple</a></p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_tuple_str">decode_pysyntax_16bit_to_tuple_str</a></td>
-<td><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple_str">pythonids.decode_pysyntax_16bit_to_tuple_str</a></td>
+<tr class="row-odd"><td><p><a class="reference external" href="package_init.html#pythonids.__init__.decode_pysyntax_16bit_to_tuple_str">decode_pysyntax_16bit_to_tuple_str</a></p></td>
+<td><p><a class="reference external" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple_str">pythonids.decode_pysyntax_16bit_to_tuple_str</a></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference external" href="package_init.html#pythonids.__init__.encode_pysyntax_to_16bit">encode_pysyntax_to_16bit</a></td>
-<td><a class="reference external" href="_modules/pythonids/__init__.html#encode_pysyntax_to_16bit">pythonids.encode_pysyntax_to_16bit</a></td>
+<tr class="row-even"><td><p><a class="reference external" href="package_init.html#pythonids.__init__.encode_pysyntax_to_16bit">encode_pysyntax_to_16bit</a></p></td>
+<td><p><a class="reference external" href="_modules/pythonids/__init__.html#encode_pysyntax_to_16bit">pythonids.encode_pysyntax_to_16bit</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -779,7 +782,7 @@ It has to be considered that the API including the provided libraries may deviat
 on alternative implementations.
 This frequently requires additional checks in order to determine the actual implementation of the current <em>Python</em>
 distribution, see  <a class="reference internal" href="python_categorization.html#pythoncategorization"><span class="std std-ref">Python Distribution Categorization</span></a>.</p>
-<p>The numeric representation is described in the manual <a class="reference internal" href="references.html#cpython" id="id4">[CPython]</a>.
+<p>The numeric representation is described in the manual <a class="reference internal" href="references.html#cpython" id="id4"><span>[CPython]</span></a>.
 The value consumes 32bits, the encoded fields comprise some additional release
 information of interest for the Python interpreter developers only.</p>
 <blockquote>
@@ -806,37 +809,37 @@ which is covered by the <em>Python</em> distribution,
 see  <a class="reference internal" href="python_categorization.html#pythoncategorization"><span class="std std-ref">Python Distribution Categorization</span></a>.</p>
 <p>The syntax of <em>Python</em> for final production releases is specified by the <em>major(PY_MAJOR_VERSION)</em>
 and <em>minor(PY_MINOR_VERSION)</em> version number, while the optional <em>build(PY_MICRO_VERSION)</em> number
-could already be ignored in most cases <a class="reference internal" href="references.html#finalrelease" id="id5">[FINALRELEASE]</a>.
+could already be ignored in most cases <a class="reference internal" href="references.html#finalrelease" id="id5"><span>[FINALRELEASE]</span></a>.
 So the <em>PY_RELEASE_LEVEL</em> and the <em>PY_RELEASE_SERIAL</em> are not meaningful relevant for production grade code,
 but are eventually used for internal test purposes.</p>
 <p>The content of the <em>sys.hexversion</em> comprises the 3-value version identifier of the
 current Python release with additional production information of the Python interpreter itself.</p>
 <blockquote>
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Bits (big endian order)</th>
-<th class="head">Meaning</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bits (big endian order)</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1-8</td>
-<td>PY_MAJOR_VERSION (the 2 in 2.1.0a3)</td>
+<tbody>
+<tr class="row-even"><td><p>1-8</p></td>
+<td><p>PY_MAJOR_VERSION (the 2 in 2.1.0a3)</p></td>
 </tr>
-<tr class="row-odd"><td>9-16</td>
-<td>PY_MINOR_VERSION (the 1 in 2.1.0a3)</td>
+<tr class="row-odd"><td><p>9-16</p></td>
+<td><p>PY_MINOR_VERSION (the 1 in 2.1.0a3)</p></td>
 </tr>
-<tr class="row-even"><td>17-24</td>
-<td>PY_MICRO_VERSION (the 0 in 2.1.0a3)</td>
+<tr class="row-even"><td><p>17-24</p></td>
+<td><p>PY_MICRO_VERSION (the 0 in 2.1.0a3)</p></td>
 </tr>
-<tr class="row-odd"><td>25-28</td>
-<td>PY_RELEASE_LEVEL (0xA for alpha, 0xB for beta, 0xC for release candidate and 0xF for final)</td>
+<tr class="row-odd"><td><p>25-28</p></td>
+<td><p>PY_RELEASE_LEVEL (0xA for alpha, 0xB for beta, 0xC for release candidate and 0xF for final)</p></td>
 </tr>
-<tr class="row-even"><td>29-32</td>
-<td>PY_RELEASE_SERIAL (the 3 in 2.1.0a3, zero for final releases)</td>
+<tr class="row-even"><td><p>29-32</p></td>
+<td><p>PY_RELEASE_SERIAL (the 3 in 2.1.0a3, zero for final releases)</p></td>
 </tr>
 </tbody>
 </table>
@@ -850,25 +853,25 @@ and API definition as required for systems and application development[FINALRELE
 Therefore utilizes the first 3-values only.
 This reduces the number of operations required on comparison opreations under some circumstances significantly.</p>
 <blockquote>
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="13%" />
-<col width="88%" />
+<col style="width: 13%" />
+<col style="width: 88%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Bits</th>
-<th class="head">Meaning</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bits</p></th>
+<th class="head"><p>Meaning</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>15-13</td>
-<td>PY_MAJOR_VERSION: 0&lt;= v &lt;= 7  (the 3 in 3.6.4)</td>
+<tbody>
+<tr class="row-even"><td><p>15-13</p></td>
+<td><p>PY_MAJOR_VERSION: 0&lt;= v &lt;= 7  (the 3 in 3.6.4)</p></td>
 </tr>
-<tr class="row-odd"><td>12-8</td>
-<td>PY_MINOR_VERSION: 0&lt;= v &lt;= 31 (the 6 in 3.6.4)</td>
+<tr class="row-odd"><td><p>12-8</p></td>
+<td><p>PY_MINOR_VERSION: 0&lt;= v &lt;= 31 (the 6 in 3.6.4)</p></td>
 </tr>
-<tr class="row-even"><td>7-0</td>
-<td>PY_MICRO_VERSION: 0&lt;= v &lt;= 255 (the 4 in 3.6.4)</td>
+<tr class="row-even"><td><p>7-0</p></td>
+<td><p>PY_MICRO_VERSION: 0&lt;= v &lt;= 255 (the 4 in 3.6.4)</p></td>
 </tr>
 </tbody>
 </table>
@@ -882,21 +885,21 @@ Thus virtually ‘endless’ in terms of IT application life cycles.</p>
 <div class="section" id="resources">
 <h2>4.2.5. Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>CPython <a class="reference internal" href="references.html#cpython" id="id6">[CPython]</a></li>
-<li>CircuitPython <a class="reference internal" href="references.html#circuitpython" id="id7">[CircuitPython]</a></li>
-<li>Cython <a class="reference internal" href="references.html#cython" id="id8">[Cython]</a></li>
-<li>Detect if python script is run from an ipython shell, or run from the command line <a class="reference internal" href="references.html#articlestackoflowipython" id="id9">[ARTICLESTACKOFLOWIPYTHON]</a></li>
-<li>In Python how can one tell if a module comes from a C extension? <a class="reference internal" href="references.html#articlestackoflowcext" id="id10">[ARTICLESTACKOFLOWCEXT]</a></li>
-<li>IPython <a class="reference internal" href="references.html#ipython" id="id11">[IPython]</a></li>
-<li>IronPython <a class="reference internal" href="references.html#ironpython" id="id12">[IronPython]</a></li>
-<li>Jython <a class="reference internal" href="references.html#jython" id="id13">[Jython]</a></li>
-<li>MicroPython <a class="reference internal" href="references.html#micropython" id="id14">[MicroPython]</a></li>
-<li>PEP407 - New release cycle and introducing long-term support versions <a class="reference internal" href="references.html#pep407" id="id15">[PEP407]</a></li>
-<li>PEP421 - Adding sys.implementation - <a class="reference internal" href="references.html#pep421" id="id16">[PEP421]</a></li>
-<li>PEP440 - Version Identification and Dependency Specification <a class="reference internal" href="references.html#pep440" id="id17">[PEP440]</a></li>
-<li>PEP440 <a class="reference internal" href="references.html#pep440" id="id18">[PEP440]</a>  - section final releases <a class="reference internal" href="references.html#finalrelease" id="id19">[FINALRELEASE]</a></li>
-<li>PyPy <a class="reference internal" href="references.html#pypy" id="id20">[PyPy]</a></li>
-<li>Software Versioning <a class="reference internal" href="references.html#swvers" id="id21">[SWVERS]</a></li>
+<li><p>CPython <a class="reference internal" href="references.html#cpython" id="id6"><span>[CPython]</span></a></p></li>
+<li><p>CircuitPython <a class="reference internal" href="references.html#circuitpython" id="id7"><span>[CircuitPython]</span></a></p></li>
+<li><p>Cython <a class="reference internal" href="references.html#cython" id="id8"><span>[Cython]</span></a></p></li>
+<li><p>Detect if python script is run from an ipython shell, or run from the command line <a class="reference internal" href="references.html#articlestackoflowipython" id="id9"><span>[ARTICLESTACKOFLOWIPYTHON]</span></a></p></li>
+<li><p>In Python how can one tell if a module comes from a C extension? <a class="reference internal" href="references.html#articlestackoflowcext" id="id10"><span>[ARTICLESTACKOFLOWCEXT]</span></a></p></li>
+<li><p>IPython <a class="reference internal" href="references.html#ipython" id="id11"><span>[IPython]</span></a></p></li>
+<li><p>IronPython <a class="reference internal" href="references.html#ironpython" id="id12"><span>[IronPython]</span></a></p></li>
+<li><p>Jython <a class="reference internal" href="references.html#jython" id="id13"><span>[Jython]</span></a></p></li>
+<li><p>MicroPython <a class="reference internal" href="references.html#micropython" id="id14"><span>[MicroPython]</span></a></p></li>
+<li><p>PEP407 - New release cycle and introducing long-term support versions <a class="reference internal" href="references.html#pep407" id="id15"><span>[PEP407]</span></a></p></li>
+<li><p>PEP421 - Adding sys.implementation - <a class="reference internal" href="references.html#pep421" id="id16"><span>[PEP421]</span></a></p></li>
+<li><p>PEP440 - Version Identification and Dependency Specification <a class="reference internal" href="references.html#pep440" id="id17"><span>[PEP440]</span></a></p></li>
+<li><p>PEP440 <a class="reference internal" href="references.html#pep440" id="id18"><span>[PEP440]</span></a>  - section final releases <a class="reference internal" href="references.html#finalrelease" id="id19"><span>[FINALRELEASE]</span></a></p></li>
+<li><p>PyPy <a class="reference internal" href="references.html#pypy" id="id20"><span>[PyPy]</span></a></p></li>
+<li><p>Software Versioning <a class="reference internal" href="references.html#swvers" id="id21"><span>[SWVERS]</span></a></p></li>
 </ul>
 </div>
 </div>
@@ -923,7 +926,7 @@ Thus virtually ‘endless’ in terms of IT application life cycles.</p>
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

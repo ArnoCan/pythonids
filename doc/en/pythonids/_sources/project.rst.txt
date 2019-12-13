@@ -10,11 +10,11 @@
 
 * LICENSE=Artistic-License-2.0 + Forced-Fairplay-Constraints
 
-* VERSION=0.1.33
+* VERSION=0.1.37
 
-* RELEASE=0.1.33-rc0
+* RELEASE=0.1.37
 
 * STATUS=Unknown
 
-* BUILDDATE=2019.12.04-07:27
+* BUILDDATE=2019.12.13-08:33
 

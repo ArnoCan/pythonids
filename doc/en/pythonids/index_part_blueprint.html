@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -195,7 +195,7 @@ of multiple Python distributions in order to select specialized code blocks, e.g
 The identifiers are designed for <a class="reference internal" href="python_bitmasks.html#bitmasksfornumericvectors"><span class="std std-ref">resource efficient large scale operations</span></a>.</p>
 <div class="figure align-center" id="id7" style="width: 500px">
 <a class="reference external image-reference" href="_static/systems-ids-sublayers.png"><img alt="_images/systems-ids-sublayers.png" src="_images/systems-ids-sublayers.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Runtime Process Sublayers <a class="reference external" href="_static/systems-ids-sublayers.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a>  <a class="reference internal" href="#reference-architecture3"><span class="std std-ref">more…</span></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Runtime Process Sublayers <a class="reference external" href="_static/systems-ids-sublayers.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a>  <a class="reference internal" href="#reference-architecture3"><span class="std std-ref">more…</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The identifiers are thus packed into <a class="reference external" href="python_bitmasks.html#">hierarchical bit mask vectors</a>.
 These provide for combined operations of bitwise-comparison as well as simple
@@ -203,13 +203,13 @@ numeric order relations, while providing high perfomeance and memory efficiency
 through fast binary and numeric standard operators.</p>
 <p id="reference-architecture3">The <em>Python Syntax</em> version is packed into a bit-array, reducing the required code
 e.g. in case of the adaptation of current syntax and runtime library changes of <em>Python3.x.y</em> on the level of changes
-for minor versions <a class="reference internal" href="references.html#pep440" id="id1">[PEP440]</a>.
+for minor versions <a class="reference internal" href="references.html#pep440" id="id1"><span>[PEP440]</span></a>.
 For the specific distinction including the release version of the actual <em>Python Distribution</em> the global
 variable <em>PYDIST</em> is provided by the module <em>pythonids.pythondist</em>, which provides the integrated information
 required for the identification of specific syntax variants and standard library sets.</p>
 <div class="figure align-center" id="id8" style="width: 1000px">
 <span id="figure-pythonidsblueprint"></span><a class="reference external image-reference" href="_static/pythonids-blueprint.png"><img alt="_images/pythonids-blueprint.png" src="_images/pythonids-blueprint.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Python Infrastructure Services <a class="reference external" href="_static/pythonids-blueprint.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Python Infrastructure Services <a class="reference external" href="_static/pythonids-blueprint.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The numeric values of bitmasks replace the common standard values of arrays and strings,
 which are originally in addition distributed in dependence of the platform over a variety
@@ -222,7 +222,7 @@ in case of the repetitive comparison with array members.</p>
 <p>The <em>pythonids</em> provides a <a class="reference internal" href="python_syntax_versions.html#bitmaskssyntaxreleases"><span class="std std-ref">16bit bitmask for Python releases</span></a>, for alternatives refer to <em>sys.hexversion</em> of the
 various Python implementation and syntax variants.</p>
 <ul>
-<li><p class="first"><strong>pythonids.PYV35Plus</strong></p>
+<li><p><strong>pythonids.PYV35Plus</strong></p>
 <p>The flag for the supported <em>Python Syntax</em> versions [<a class="reference external" href="package_init.html#v3k">pythonids</a>]:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -250,7 +250,7 @@ various Python implementation and syntax variants.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>pythonids.PYVxyz</strong></p>
+<li><p><strong>pythonids.PYVxyz</strong></p>
 <p>The combined bit-mask-flag of the <em>Python Syntax</em> version <em>PythonX.Y</em>
 and release  <em>PythonX.Y(Z)</em> is provided by the variable <em>Vxyz</em>
 [<a class="reference external" href="package_init.html#pyvxyz">PYVxyz</a>]:</p>
@@ -267,7 +267,7 @@ and release  <em>PythonX.Y(Z)</em> is provided by the variable <em>Vxyz</em>
 </td></tr></table></div>
 <p>See also [<a class="reference external" href="package_init.html#encode-pysyntax-to-16bit">encode_pysyntax_to_16bit</a>].</p>
 </li>
-<li><p class="first"><strong>pythonids.encode_pysyntax_to_16bit()</strong></p>
+<li><p><strong>pythonids.encode_pysyntax_to_16bit()</strong></p>
 <p>Dynamic version evaluation by compressed bitmasks as single integer values
 by the slim and fast function interface
 [<a class="reference external" href="package_init.html#encode-pysyntax-to-16bit">encode_pysyntax_to_16bit</a>].</p>
@@ -309,7 +309,7 @@ by the slim and fast function interface
 , which identify the actual current implementation of the
 execution framework including the major and minor version of the <em>Pyhton Syntax</em>.</p>
 <ul>
-<li><p class="first"><strong>pythonids.pythondist.PYDIST</strong></p>
+<li><p><strong>pythonids.pythondist.PYDIST</strong></p>
 <p>The combined bit-mask-flag of the <em>Python Distribution</em> version <em>Python-Variant-X.Y</em> with
 the major and minor syntax compatibility to <em>PythonX.Y</em>
 [<a class="reference external" href="package_init.html#pydist">PYDIST</a>]:</p>
@@ -328,11 +328,11 @@ the major and minor syntax compatibility to <em>PythonX.Y</em>
 </td></tr></table></div>
 <p>See also [<a class="reference external" href="package_init.html#encode-pydistribution-to-32bit">encode_pydist_to_32bit</a>].</p>
 </li>
-<li><p class="first"><strong>pythonids.encode_pydist_to_32bit()</strong></p>
+<li><p><strong>pythonids.encode_pydist_to_32bit()</strong></p>
 <p>Dynamic version evaluation by compressed bitmasks as single integer values
 by the slim and fast function interface
 [<a class="reference external" href="package_init.html#encode-pydistribution-to-32bit">encode_pydist_to_32bit</a>].</p>
-<p>The following example demonstrates the detection of <em>Cython</em> <a class="reference internal" href="references.html#cython" id="id4">[Cython]</a> and the specific
+<p>The following example demonstrates the detection of <em>Cython</em> <a class="reference internal" href="references.html#cython" id="id4"><span>[Cython]</span></a> and the specific
 release of <em>Cython</em> itself. This enables the appropriate selection of the special optimization
 for the best performance of the current application.
 The required overhead is basically negligible, in particular when multiple code segments require the
@@ -436,14 +436,14 @@ Thus the following <em>if</em> clause delivers different results on <em>Jython</
 </div>
 <p>The results are different on implementations:</p>
 <ul>
-<li><p class="first">on <em>CPython</em>, <em>IPython</em>, <em>IronPython</em>, and <em>PyPy</em>:</p>
+<li><p>on <em>CPython</em>, <em>IPython</em>, <em>IronPython</em>, and <em>PyPy</em>:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">on <em>Jython</em>:</p>
+<li><p>on <em>Jython</em>:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
@@ -493,9 +493,9 @@ The probably most frequent compatibility issue arises for the change of the stri
 representation.
 Here the most common comparison and basic transformation could be handled
 by the following patch.
-See also <a class="reference internal" href="references.html#issue32078" id="id5">[ISSUE32078]</a>.</p>
+See also <a class="reference internal" href="references.html#issue32078" id="id5"><span>[ISSUE32078]</span></a>.</p>
 <ul>
-<li><p class="first"><strong>pythonids.ISSTR</strong> and <strong>pythonids.unicode</strong></p>
+<li><p><strong>pythonids.ISSTR</strong> and <strong>pythonids.unicode</strong></p>
 <p>The simplified portability of encodings for Python2 and Python3
 is supported by the adapted type set <em>ISSTR</em> and the
 conditional <em>unicode</em> alias
@@ -541,7 +541,7 @@ conditional <em>unicode</em> alias
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

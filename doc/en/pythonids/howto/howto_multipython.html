@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -195,23 +195,22 @@
 <div class="section" id="calculation-of-bit-masks">
 <h2>Calculation of bit masks<a class="headerlink" href="#calculation-of-bit-masks" title="Permalink to this headline">¶</a></h2>
 <p>A typical example for the base of the mapping and algorithms is:</p>
-<pre class="literal-block">
-# category: posix
-RTE_POSIX = 8192  #: Posix systems using <em>fcntl</em> <a class="reference internal" href="../references.html#posix" id="id1">[POSIX]</a>.
+<pre class="literal-block"># category: posix
+RTE_POSIX = 8192  #: Posix systems using <em>fcntl</em> <a class="reference internal" href="../references.html#posix" id="id1"><span>[POSIX]</span></a>.
 
 # set: OS-X
 # bit-block: Apple - OS-X
-RTE_OSX = RTE_POSIX + 1  #: Darwin/OS-X, as Posix system <a class="reference internal" href="../references.html#posix" id="id2">[POSIX]</a>, no macpath-legacy.
-RTE_OSX = RTE_POSIX + 2  #: Darwin/OS-X, as Posix system <a class="reference internal" href="../references.html#posix" id="id3">[POSIX]</a>, no macpath-legacy.
+RTE_OSX = RTE_POSIX + 1  #: Darwin/OS-X, as Posix system <a class="reference internal" href="../references.html#posix" id="id2"><span>[POSIX]</span></a>, no macpath-legacy.
+RTE_OSX = RTE_POSIX + 2  #: Darwin/OS-X, as Posix system <a class="reference internal" href="../references.html#posix" id="id3"><span>[POSIX]</span></a>, no macpath-legacy.
 
 # set: Sun - Solaris
-RTE_SOLARIS = RTE_POSIX + 16  #: UNIX/Solaris, as Posix system <a class="reference internal" href="../references.html#posix" id="id4">[POSIX]</a>.
+RTE_SOLARIS = RTE_POSIX + 16  #: UNIX/Solaris, as Posix system <a class="reference internal" href="../references.html#posix" id="id4"><span>[POSIX]</span></a>.
 
 # set: BSD
-RTE_BSD = RTE_POSIX + 32  #: BSD, - OpenBSD, FreeBSD, NetBSD - as Posix system <a class="reference internal" href="../references.html#posix" id="id5">[POSIX]</a>.
+RTE_BSD = RTE_POSIX + 32  #: BSD, - OpenBSD, FreeBSD, NetBSD - as Posix system <a class="reference internal" href="../references.html#posix" id="id5"><span>[POSIX]</span></a>.
 
 # set: Linux
-RTE_LINUX = RTE_POSIX + 64  #: Linux with specific add-ons - OS, DIST, GNU - as Posix system <a class="reference internal" href="../references.html#posix" id="id6">[POSIX]</a>.
+RTE_LINUX = RTE_POSIX + 64  #: Linux with specific add-ons - OS, DIST, GNU - as Posix system <a class="reference internal" href="../references.html#posix" id="id6"><span>[POSIX]</span></a>.
 
 # members&quot; Linux
 RTE_CENTOS  = RTE_LINUX + 1  #: CentOS
@@ -228,8 +227,7 @@ RTE_DEBIAN = RTE_LINUX + 64  #: Debian
 RTE_DEBIAN6 = RTE_LINUX + 65  #: Debian - squeeze
 RTE_DEBIAN7 = RTE_LINUX + 66  #: Debian - wheezy
 RTE_DEBIAN8 = RTE_LINUX + 67  #: Debian - jessy
-RTE_DEBIAN9 = RTE_LINUX + 68  #: Debian - stretch
-</pre>
+RTE_DEBIAN9 = RTE_LINUX + 68  #: Debian - stretch</pre>
 <p>The calculations are for OS and distributions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
 <span class="c1"># explicit</span>
@@ -279,7 +277,7 @@ RTE_DEBIAN9 = RTE_LINUX + 68  #: Debian - stretch
 <div class="section" id="string-encoding">
 <h2>String Encoding<a class="headerlink" href="#string-encoding" title="Permalink to this headline">¶</a></h2>
 <ul id="index-0">
-<li><p class="first"><strong>ISSTR</strong>: string and unicode for type comparison:</p>
+<li><p><strong>ISSTR</strong>: string and unicode for type comparison:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">PYV35Plus</span><span class="p">:</span>
    <span class="n">ISSTR</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -287,7 +285,7 @@ RTE_DEBIAN9 = RTE_LINUX + 68  #: Debian - stretch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>unicode</strong>: for Python3, remaps <em>unicode</em> to <em>str</em>:</p>
+<li><p><strong>unicode</strong>: for Python3, remaps <em>unicode</em> to <em>str</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">PYV35Plus</span><span class="p">:</span>
    <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
 </pre></div>
@@ -320,7 +318,7 @@ RTE_DEBIAN9 = RTE_LINUX + 68  #: Debian - stretch
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

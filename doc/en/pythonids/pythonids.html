@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -217,48 +217,48 @@
 <p>The package ‘pythonids’ provides the canonical core enumerations
 of bit encoded numeric IDs for the Python syntax.</p>
 <ul>
-<li><p class="first"><strong>Constants and Attributes</strong></p>
+<li><p><strong>Constants and Attributes</strong></p>
 <blockquote>
 <div><div class="overviewtab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="30%" />
-<col width="17%" />
-<col width="52%" />
+<col style="width: 30%" />
+<col style="width: 17%" />
+<col style="width: 52%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#spec-pyvxyz"><span class="std std-ref">PYVxyz</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id1">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id2">[Python3]</a></td>
-<td>Current Implementation, integer</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-pyvxyz"><span class="std std-ref">PYVxyz</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id1"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id2"><span>[Python3]</span></a></p></td>
+<td><p>Current Implementation, integer</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-pyv27x"><span class="std std-ref">PYV27X</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id3">[Python2]</a></td>
-<td>Python2.7, bool</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-pyv27x"><span class="std std-ref">PYV27X</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id3"><span>[Python2]</span></a></p></td>
+<td><p>Python2.7, bool</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#spec-pyv3x"><span class="std std-ref">PYV3X</span></a></td>
-<td><a class="reference internal" href="references.html#python3" id="id4">[Python3]</a></td>
-<td>Python3, bool</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-pyv3x"><span class="std std-ref">PYV3X</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python3" id="id4"><span>[Python3]</span></a></p></td>
+<td><p>Python3, bool</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-pyv3x3"><span class="std std-ref">PYV3X3</span></a></td>
-<td><a class="reference internal" href="references.html#python3" id="id5">[Python3]</a></td>
-<td>Python3.0 &lt;= x &lt;= Python3.3.x, bool</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-pyv3x3"><span class="std std-ref">PYV3X3</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python3" id="id5"><span>[Python3]</span></a></p></td>
+<td><p>Python3.0 &lt;= x &lt;= Python3.3.x, bool</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#spec-pyv35plus"><span class="std std-ref">PYV35Plus</span></a></td>
-<td><a class="reference internal" href="references.html#python3" id="id6">[Python3]</a></td>
-<td>Python3.5+, bool</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-pyv35plus"><span class="std std-ref">PYV35Plus</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python3" id="id6"><span>[Python3]</span></a></p></td>
+<td><p>Python3.5+, bool</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-pyv-x-y-z"><span class="std std-ref">PYV{x}[{y}[{z}</span></a></td>
-<td>&#160;</td>
-<td>Pre-Defined Constants, integer</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-pyv-x-y-z"><span class="std std-ref">PYV{x}[{y}[{z}</span></a></p></td>
+<td></td>
+<td><p>Pre-Defined Constants, integer</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#spec-isstr"><span class="std std-ref">ISSTR</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id7">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id8">[Python3]</a></td>
-<td>tuple of valid string types, includes <em>unicode</em> for <em>Python2</em></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-isstr"><span class="std std-ref">ISSTR</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id7"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id8"><span>[Python3]</span></a></p></td>
+<td><p>tuple of valid string types, includes <em>unicode</em> for <em>Python2</em></p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-isstrbase"><span class="std std-ref">ISSTRBASE</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id9">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id10">[Python3]</a></td>
-<td>tuple of valid <em>basestring</em> types, includes <em>unicode</em> for <em>Python2</em></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-isstrbase"><span class="std std-ref">ISSTRBASE</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id9"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id10"><span>[Python3]</span></a></p></td>
+<td><p>tuple of valid <em>basestring</em> types, includes <em>unicode</em> for <em>Python2</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -266,36 +266,36 @@ of bit encoded numeric IDs for the Python syntax.</p>
 </div>
 </div></div></blockquote>
 </li>
-<li><p class="first"><strong>Functions</strong></p>
+<li><p><strong>Functions</strong></p>
 <blockquote>
 <div><div class="overviewtab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="57%" />
-<col width="15%" />
-<col width="28%" />
+<col style="width: 57%" />
+<col style="width: 15%" />
+<col style="width: 28%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-str"><span class="std std-ref">decode_pysyntax_16bit_to_str</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id11">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id12">[Python3]</a></td>
-<td>str “&lt;major&gt;.&lt;minor&gt;.&lt;micro&gt;”</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-str"><span class="std std-ref">decode_pysyntax_16bit_to_str</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id11"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id12"><span>[Python3]</span></a></p></td>
+<td><p>str “&lt;major&gt;.&lt;minor&gt;.&lt;micro&gt;”</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-tuple"><span class="std std-ref">decode_pysyntax_16bit_to_tuple</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id13">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id14">[Python3]</a></td>
-<td>tuple (&lt;major&gt;, &lt;minor&gt;, &lt;micro&gt;)</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-tuple"><span class="std std-ref">decode_pysyntax_16bit_to_tuple</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id13"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id14"><span>[Python3]</span></a></p></td>
+<td><p>tuple (&lt;major&gt;, &lt;minor&gt;, &lt;micro&gt;)</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-tuple-str"><span class="std std-ref">decode_pysyntax_16bit_to_tuple_str</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id15">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id16">[Python3]</a></td>
-<td>tuple (“&lt;major&gt;”, “&lt;minor&gt;”, “&lt;micro&gt;”)</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-decode-pysyntax-16bit-to-tuple-str"><span class="std std-ref">decode_pysyntax_16bit_to_tuple_str</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id15"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id16"><span>[Python3]</span></a></p></td>
+<td><p>tuple (“&lt;major&gt;”, “&lt;minor&gt;”, “&lt;micro&gt;”)</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#spec-decode-pysyntax-str-to-num"><span class="std std-ref">decode_pysyntax_str_to_num</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id17">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id18">[Python3]</a></td>
-<td>int</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#spec-decode-pysyntax-str-to-num"><span class="std std-ref">decode_pysyntax_str_to_num</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id17"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id18"><span>[Python3]</span></a></p></td>
+<td><p>int</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#spec-encode-pysyntax-to-16bit"><span class="std std-ref">encode_pysyntax_to_16bit</span></a></td>
-<td><a class="reference internal" href="references.html#python2" id="id19">[Python2]</a> <a class="reference internal" href="references.html#python3" id="id20">[Python3]</a></td>
-<td>int</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#spec-encode-pysyntax-to-16bit"><span class="std std-ref">encode_pysyntax_to_16bit</span></a></p></td>
+<td><p><a class="reference internal" href="references.html#python2" id="id19"><span>[Python2]</span></a> <a class="reference internal" href="references.html#python3" id="id20"><span>[Python3]</span></a></p></td>
+<td><p>int</p></td>
 </tr>
 </tbody>
 </table>
@@ -443,9 +443,7 @@ The value is set automatic for the current performing Python interpreter during 
 </div></blockquote>
 <p>The value is evaluated by the call:</p>
 <blockquote>
-<div><pre class="literal-block">
-PYVxyz = encode_pysyntax_to_16bit(*sys.version_info[:3])
-</pre>
+<div><pre class="literal-block">PYVxyz = encode_pysyntax_to_16bit(*sys.version_info[:3])</pre>
 </div></blockquote>
 <p>This enables the binary checks with pre-defined integer values for fast frequent
 evaluation:</p>
@@ -544,7 +542,7 @@ Thus the value of <em>PYV35Plus</em> is set as a runtime constant during load.</
 <span id="spec-decode-pysyntax-16bit-to-str"></span><h3>5.1.4.1. decode_pysyntax_16bit_to_str<a class="headerlink" href="#decode-pysyntax-16bit-to-str" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="pythonids.__init__.decode_pysyntax_16bit_to_str">
-<code class="descclassname">pythonids.__init__.</code><code class="descname">decode_pysyntax_16bit_to_str</code><span class="sig-paren">(</span><em>xyz</em>, <em>form='%d.%d.%d'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_str" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">decode_pysyntax_16bit_to_str</code><span class="sig-paren">(</span><em class="sig-param">xyz</em>, <em class="sig-param">form='%d.%d.%d'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decodes the compressed version 16bit integer bitmask
 into the corresponding string.</p>
 <p>The optional format string <em>form</em> provides the formatting
@@ -564,7 +562,7 @@ of a 3-value interger tuple. E.g. <em>form=”%02d.%02d.%03d”</em>.</p>
 <span id="spec-decode-pysyntax-16bit-to-tuple"></span><h3>5.1.4.2. decode_pysyntax_16bit_to_tuple<a class="headerlink" href="#decode-pysyntax-16bit-to-tuple" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="pythonids.__init__.decode_pysyntax_16bit_to_tuple">
-<code class="descclassname">pythonids.__init__.</code><code class="descname">decode_pysyntax_16bit_to_tuple</code><span class="sig-paren">(</span><em>xyz</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_tuple" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">decode_pysyntax_16bit_to_tuple</code><span class="sig-paren">(</span><em class="sig-param">xyz</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_tuple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decodes the compressed version 16bit integer bitmask
 into the corresponding tuple of integer values.</p>
 <p><strong>Examples</strong>:</p>
@@ -581,7 +579,7 @@ into the corresponding tuple of integer values.</p>
 <span id="spec-decode-pysyntax-16bit-to-tuple-str"></span><h3>5.1.4.3. decode_pysyntax_16bit_to_tuple_str<a class="headerlink" href="#decode-pysyntax-16bit-to-tuple-str" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="pythonids.__init__.decode_pysyntax_16bit_to_tuple_str">
-<code class="descclassname">pythonids.__init__.</code><code class="descname">decode_pysyntax_16bit_to_tuple_str</code><span class="sig-paren">(</span><em>xyz</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_tuple_str" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">decode_pysyntax_16bit_to_tuple_str</code><span class="sig-paren">(</span><em class="sig-param">xyz</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_16bit_to_tuple_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_16bit_to_tuple_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decodes the compressed version 16bit integer bitmask
 into the corresponding tuple of integer values.</p>
 <p><strong>Examples</strong>:</p>
@@ -598,25 +596,24 @@ into the corresponding tuple of integer values.</p>
 <span id="spec-decode-pysyntax-str-to-num"></span><h3>5.1.4.4. decode_pysyntax_str_to_num<a class="headerlink" href="#decode-pysyntax-str-to-num" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="pythonids.__init__.decode_pysyntax_str_to_num">
-<code class="descclassname">pythonids.__init__.</code><code class="descname">decode_pysyntax_str_to_num</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_str_to_num"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_str_to_num" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">decode_pysyntax_str_to_num</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#decode_pysyntax_str_to_num"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.decode_pysyntax_str_to_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split a version string separated by ‘.’ into an integer
 tuple.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decode_pysyntax_str_to_num</span><span class="p">(</span><span class="s1">&#39;1.22.17&#39;</span><span class="p">)</span>  <span class="o">=&gt;</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>A tiny utility - frequently required.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>string 'x.y.z'.</strong> (<em>Version</em>) – </td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Integer tuple (x, y, z)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string 'x.y.z'.</strong> (<em>Version</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Integer tuple (x, y, z)</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -624,42 +621,38 @@ tuple.</p>
 <span id="spec-encode-pysyntax-to-16bit"></span><h3>5.1.4.5. encode_pysyntax_to_16bit<a class="headerlink" href="#encode-pysyntax-to-16bit" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="pythonids.__init__.encode_pysyntax_to_16bit">
-<code class="descclassname">pythonids.__init__.</code><code class="descname">encode_pysyntax_to_16bit</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>z=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#encode_pysyntax_to_16bit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.encode_pysyntax_to_16bit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">encode_pysyntax_to_16bit</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em>, <em class="sig-param">z=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pythonids/__init__.html#encode_pysyntax_to_16bit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.encode_pysyntax_to_16bit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encodes the version by calculating the 16bit integer
 bitmask for the provided Python release values.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> – <p>The major version number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – <p>The major version number.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span>
 
 <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x0</span> <span class="o">&lt;</span> <span class="mi">8</span>  <span class="c1"># internal low-level 16-bit optimization threshold</span>
 </pre></div>
 </div>
-</li>
-<li><strong>y</strong> – <p>The minor version number.</p>
+</p></li>
+<li><p><strong>y</strong> – <p>The minor version number.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">32</span>
 </pre></div>
 </div>
-</li>
-<li><strong>z</strong> – <p>The numeric relase-build tag.</p>
+</p></li>
+<li><p><strong>z</strong> – <p>The numeric relase-build tag.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="mi">256</span>
 </pre></div>
 </div>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The bitmask.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">pass-through</span></code></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The bitmask.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
 <p><strong>Examples</strong>:</p>
 <blockquote>
 <div><p>Calculates the 16bit-mask for the Python release:</p>
@@ -790,13 +783,13 @@ bitmask for the provided Python release values.</p>
 <h2>5.1.5. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="exception">
 <dt id="pythonids.__init__.PythonIDsError">
-<em class="property">exception </em><code class="descclassname">pythonids.__init__.</code><code class="descname">PythonIDsError</code><a class="reference internal" href="_modules/pythonids/__init__.html#PythonIDsError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.PythonIDsError" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">PythonIDsError</code><a class="reference internal" href="_modules/pythonids/__init__.html#PythonIDsError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.PythonIDsError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subsystem <em>PythonIDs</em>.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="pythonids.__init__.PythonIDsImplementationError">
-<em class="property">exception </em><code class="descclassname">pythonids.__init__.</code><code class="descname">PythonIDsImplementationError</code><a class="reference internal" href="_modules/pythonids/__init__.html#PythonIDsImplementationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.PythonIDsImplementationError" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-prename descclassname">pythonids.__init__.</code><code class="sig-name descname">PythonIDsImplementationError</code><a class="reference internal" href="_modules/pythonids/__init__.html#PythonIDsImplementationError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pythonids.__init__.PythonIDsImplementationError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Python implementation not supported.</p>
 </dd></dl>
 
@@ -825,7 +818,7 @@ bitmask for the provided Python release values.</p>
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

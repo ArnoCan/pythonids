@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -222,14 +222,14 @@
             
   <div class="section" id="python-implementations">
 <span id="pythoninterpersandcompilers"></span><h1>4.4. Python Implementations<a class="headerlink" href="#python-implementations" title="Permalink to this headline">¶</a></h1>
-<p>Python is generally defined as an interpreted language with on-the-fly compiled p-code <a class="reference internal" href="references.html#pcode" id="id1">[PCODE]</a> for
-execution speed up. The p-code is executed in a language specific virtual machine - the p-code machine <a class="reference internal" href="references.html#pcode" id="id2">[PCODE]</a> - as
+<p>Python is generally defined as an interpreted language with on-the-fly compiled p-code <a class="reference internal" href="references.html#pcode" id="id1"><span>[PCODE]</span></a> for
+execution speed up. The p-code is executed in a language specific virtual machine - the p-code machine <a class="reference internal" href="references.html#pcode" id="id2"><span>[PCODE]</span></a> - as
 the runtime system.
 The standard reference implementation is <em>CPython</em> based on <em>C</em>, which supports extension
 modules by it’s <em>C-Extension-API</em>.</p>
 <div class="figure align-center" id="id47" style="width: 250px">
 <a class="reference external image-reference" href="_static/abstract-python-integration.png"><img alt="_images/abstract-python-integration.png" src="_images/abstract-python-integration.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/abstract-python-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/abstract-python-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
 <p>Other implementations exist, which utilize the <em>Java-VM</em> / <em>JVM</em> including just-in-time <em>JIT</em> compilation,
 more traditional similarity by <em>IronPython</em> implemented in <em>C#</em> based on the <em>.NET-Framework</em>.</p>
@@ -238,7 +238,7 @@ While the native API requires some more in-depth use of the <em>C-Types</em> def
 provide for more or less additional abstraction of the API.
 The <em>ctypes</em> standard package provides a Python interface for calling shared library and DLL interfaces
 by supporting elementary bindings for the exchanged parameters and data.
-The packages <em>CFFI</em> <a class="reference internal" href="references.html#cffi" id="id3">[CFFI]</a> and <em>Cppyy</em> <a class="reference internal" href="references.html#cppyy" id="id4">[CPPYY]</a> provide specific bindings for Python, while
+The packages <em>CFFI</em> <a class="reference internal" href="references.html#cffi" id="id3"><span>[CFFI]</span></a> and <em>Cppyy</em> <a class="reference internal" href="references.html#cppyy" id="id4"><span>[CPPYY]</span></a> provide specific bindings for Python, while
 the extention Frameworks like <em>SWIG</em> provide a call wrapper for extensions written in different languages including C/C++.
 The <em>Cython</em> implementation is here somewhat different, as it provides a native <em>Python</em> compiler which
 preprocesses the <em>Python</em> code into <em>C</em> code  with optional <em>Cython</em> and <em>C</em> specific language extensions
@@ -256,64 +256,64 @@ Therefore the runtime environment is identical in both code segments - the calle
 Thus the <em>platformids</em> evaluates it’s own runtime <em>Python</em> distribution correctly as the distribution executing
 the caller function.</p>
 <p>The <em>CPYthon</em> runtime environment based on the Python-Virtual-Machine - PVM, which executes portable intermediate
-code, the p-code <a class="reference internal" href="references.html#pcode" id="id5">[PCODE]</a>.</p>
+code, the p-code <a class="reference internal" href="references.html#pcode" id="id5"><span>[PCODE]</span></a>.</p>
 <div class="figure align-center" id="id48" style="width: 250px">
 <a class="reference external image-reference" href="_static/cpython-integration.png"><img alt="_images/cpython-integration.png" src="_images/cpython-integration.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/cpython-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/cpython-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 <p>The characterization data is represented by</p>
 <blockquote>
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="19%" />
-<col width="27%" />
-<col width="53%" />
+<col style="width: 19%" />
+<col style="width: 27%" />
+<col style="width: 53%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">attribute</th>
-<th class="head">values</th>
-<th class="head">remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>attribute</p></th>
+<th class="head"><p>values</p></th>
+<th class="head"><p>remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>category</td>
-<td>python</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>python</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>disttype</td>
-<td>python&lt;major0&gt;.&lt;minor0&gt;</td>
-<td>the version of the Python syntax</td>
+<tr class="row-odd"><td><p>disttype</p></td>
+<td><p>python&lt;major0&gt;.&lt;minor0&gt;</p></td>
+<td><p>the version of the Python syntax</p></td>
 </tr>
-<tr class="row-even"><td>dist</td>
-<td>cpython</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dist</p></td>
+<td><p>cpython</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>distrel</td>
-<td>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</td>
-<td>in case of CPython the syntax release</td>
+<tr class="row-odd"><td><p>distrel</p></td>
+<td><p>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</p></td>
+<td><p>in case of CPython the syntax release</p></td>
 </tr>
-<tr class="row-even"><td>hexrelease</td>
-<td>0xb2……</td>
-<td>the resulting hex encoding</td>
+<tr class="row-even"><td><p>hexrelease</p></td>
+<td><p>0xb2……</p></td>
+<td><p>the resulting hex encoding</p></td>
 </tr>
-<tr class="row-odd"><td>compiler</td>
-<td>&lt;C-Compiler&gt;</td>
-<td>the used C compiler, e.g. GCC</td>
+<tr class="row-odd"><td><p>compiler</p></td>
+<td><p>&lt;C-Compiler&gt;</p></td>
+<td><p>the used C compiler, e.g. GCC</p></td>
 </tr>
-<tr class="row-even"><td>compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</td>
-<td>the release version of the C compiler</td>
+<tr class="row-even"><td><p>compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</p></td>
+<td><p>the release version of the C compiler</p></td>
 </tr>
-<tr class="row-odd"><td>c_compiler</td>
-<td>&lt;C-Compiler&gt;</td>
-<td>in case of CPython the same as the <em>compiler</em></td>
+<tr class="row-odd"><td><p>c_compiler</p></td>
+<td><p>&lt;C-Compiler&gt;</p></td>
+<td><p>in case of CPython the same as the <em>compiler</em></p></td>
 </tr>
-<tr class="row-even"><td>c_compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</td>
-<td>in case of CPython the same as the <em>compiler_version</em></td>
+<tr class="row-even"><td><p>c_compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</p></td>
+<td><p>in case of CPython the same as the <em>compiler_version</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -323,7 +323,7 @@ code, the p-code <a class="reference internal" href="references.html#pcode" id="
 </div></div></blockquote>
 <div class="section" id="the-execution-model">
 <h3>4.4.1.1. The  Execution Model<a class="headerlink" href="#the-execution-model" title="Permalink to this headline">¶</a></h3>
-<p>The Python interpreter creates by default p-code <a class="reference internal" href="references.html#pcode" id="id6">[PCODE]</a>, which is the on-the-fly compiled source code
+<p>The Python interpreter creates by default p-code <a class="reference internal" href="references.html#pcode" id="id6"><span>[PCODE]</span></a>, which is the on-the-fly compiled source code
 as abstract assembler code.
 The compilation occurs only in case of an actual change, and only when the sources are present.
 The p-code is than executed by a virtual processor, the Python-Virtual-Machine - the <em>PVM</em>.</p>
@@ -336,14 +336,14 @@ for introspection.
 The module <em>inspect</em> for example has no access to the provided symbols within the libraries, in particular when they
 are stripped off.
 Therefore the Python implementation of <em>pyhtonids</em> can just detect that the caller is an extension module,
-and with some heuristics that it is implemented in <em>C/C++</em> <a class="reference internal" href="references.html#articlestackoflowcext" id="id7">[ARTICLESTACKOFLOWCEXT]</a>, but not the type, neither the version.
+and with some heuristics that it is implemented in <em>C/C++</em> <a class="reference internal" href="references.html#articlestackoflowcext" id="id7"><span>[ARTICLESTACKOFLOWCEXT]</span></a>, but not the type, neither the version.
 Even though some solutions are possible, the current version of <em>pythonids</em> provides an inline module,
 with either access to the extension data, or the hard-coded defition of the identifier and version at compile time.</p>
 </div>
 <div class="section" id="cpython-extension-modules">
 <span id="cpythonextentionmods"></span><h3>4.4.1.2. CPython Extension Modules<a class="headerlink" href="#cpython-extension-modules" title="Permalink to this headline">¶</a></h3>
 <p>For the compiled extension modules some special handling is required,
-this is extracted into a specific package coming soon <a class="reference internal" href="references.html#extensionids" id="id8">[extensionids]</a>.</p>
+this is extracted into a specific package coming soon <a class="reference internal" href="references.html#extensionids" id="id8"><span>[extensionids]</span></a>.</p>
 </div>
 <div class="section" id="the-data-aquisition">
 <h3>4.4.1.3. The Data Aquisition<a class="headerlink" href="#the-data-aquisition" title="Permalink to this headline">¶</a></h3>
@@ -358,22 +358,22 @@ see <a class="reference internal" href="#cpythonextentionmods"><span class="std 
 <span id="descripython"></span><h2>4.4.2. IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h2>
 <p>The <em>IPython</em> implementation basically extends the standard <em>CPython</em> implementation with
 interactive features, standalone and embeddable, with an additional GUI based console.
-<em>IPython</em> could be simply installed as an add-on <a class="reference internal" href="references.html#ipython" id="id9">[IPython]</a> via <em>PyPI</em> <a class="reference internal" href="references.html#pypi" id="id10">[PyPI]</a>.
+<em>IPython</em> could be simply installed as an add-on <a class="reference internal" href="references.html#ipython" id="id9"><span>[IPython]</span></a> via <em>PyPI</em> <a class="reference internal" href="references.html#pypi" id="id10"><span>[PyPI]</span></a>.
 Thus <em>IPython</em> is basically not an separate implementation, but it changes the interactive behaviour of the
 standard implementation including related output features.
 This requires in some cases the separate detection, thus it is included as a separate implementation.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#ipython" id="id11">[IPython]</a>.</p>
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#ipython" id="id11"><span>[IPython]</span></a>.</p>
 <p>IPython (Interactive Python) is a command shell for interactive computing in multiple programming languages,
 originally developed for the Python programming language, that offers introspection, rich media, shell syntax,
 tab completion, and history. IPython provides the following features:</p>
-<ul class="last simple">
-<li>Interactive shells (terminal and Qt-based).</li>
-<li>A browser-based notebook interface with support for code, text, mathematical expressions, inline plots and other media.</li>
-<li>Support for interactive data visualization and use of GUI toolkits.</li>
-<li>Flexible, embeddable interpreters to load into one’s own projects.</li>
-<li>Tools for parallel computing.</li>
+<ul class="simple">
+<li><p>Interactive shells (terminal and Qt-based).</p></li>
+<li><p>A browser-based notebook interface with support for code, text, mathematical expressions, inline plots and other media.</p></li>
+<li><p>Support for interactive data visualization and use of GUI toolkits.</p></li>
+<li><p>Flexible, embeddable interpreters to load into one’s own projects.</p></li>
+<li><p>Tools for parallel computing.</p></li>
 </ul>
 </div>
 <p>The characterization data is basically the same as for <em>CPython</em> represented by</p>
@@ -381,54 +381,54 @@ tab completion, and history. IPython provides the following features:</p>
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="19%" />
-<col width="27%" />
-<col width="53%" />
+<col style="width: 19%" />
+<col style="width: 27%" />
+<col style="width: 53%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">attribute</th>
-<th class="head">values</th>
-<th class="head">remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>attribute</p></th>
+<th class="head"><p>values</p></th>
+<th class="head"><p>remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>category</td>
-<td>python</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>python</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>disttype</td>
-<td>python&lt;major0&gt;.&lt;minor0&gt;</td>
-<td>the version of the Python syntax</td>
+<tr class="row-odd"><td><p>disttype</p></td>
+<td><p>python&lt;major0&gt;.&lt;minor0&gt;</p></td>
+<td><p>the version of the Python syntax</p></td>
 </tr>
-<tr class="row-even"><td>dist</td>
-<td>cpython</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dist</p></td>
+<td><p>cpython</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>distrel</td>
-<td>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</td>
-<td>in case of CPython the syntax release</td>
+<tr class="row-odd"><td><p>distrel</p></td>
+<td><p>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</p></td>
+<td><p>in case of CPython the syntax release</p></td>
 </tr>
-<tr class="row-even"><td>hexrelease</td>
-<td>0xb2……</td>
-<td>the resulting hex encoding</td>
+<tr class="row-even"><td><p>hexrelease</p></td>
+<td><p>0xb2……</p></td>
+<td><p>the resulting hex encoding</p></td>
 </tr>
-<tr class="row-odd"><td>compiler</td>
-<td>&lt;C-Compiler&gt;</td>
-<td>the used C compiler, e.g. GCC</td>
+<tr class="row-odd"><td><p>compiler</p></td>
+<td><p>&lt;C-Compiler&gt;</p></td>
+<td><p>the used C compiler, e.g. GCC</p></td>
 </tr>
-<tr class="row-even"><td>compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</td>
-<td>the release version of the C compiler</td>
+<tr class="row-even"><td><p>compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</p></td>
+<td><p>the release version of the C compiler</p></td>
 </tr>
-<tr class="row-odd"><td>c_compiler</td>
-<td>&lt;C-Compiler&gt;</td>
-<td>in case of CPython the same as the <em>compiler</em></td>
+<tr class="row-odd"><td><p>c_compiler</p></td>
+<td><p>&lt;C-Compiler&gt;</p></td>
+<td><p>in case of CPython the same as the <em>compiler</em></p></td>
 </tr>
-<tr class="row-even"><td>c_compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</td>
-<td>in case of CPython the same as the <em>compiler_version</em></td>
+<tr class="row-even"><td><p>c_compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</p></td>
+<td><p>in case of CPython the same as the <em>compiler_version</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -444,61 +444,61 @@ The <em>IronPython</em> package uses the <em>.NET</em> as the runtime virtual ma
 supported languages, so <em>C#</em>.</p>
 <div class="figure align-center" id="id49" style="width: 250px">
 <a class="reference external image-reference" href="_static/dotnet-integration.png"><img alt="_images/dotnet-integration.png" src="_images/dotnet-integration.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/dotnet-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/dotnet-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
 </div>
 <p>The characterization data is represented by</p>
 <blockquote>
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="18%" />
-<col width="33%" />
-<col width="49%" />
+<col style="width: 18%" />
+<col style="width: 33%" />
+<col style="width: 49%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">attribute</th>
-<th class="head">values</th>
-<th class="head">remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>attribute</p></th>
+<th class="head"><p>values</p></th>
+<th class="head"><p>remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>category</td>
-<td>python</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>python</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>disttype</td>
-<td>python&lt;major0&gt;.&lt;minor0&gt;</td>
-<td>the version of the Python syntax</td>
+<tr class="row-odd"><td><p>disttype</p></td>
+<td><p>python&lt;major0&gt;.&lt;minor0&gt;</p></td>
+<td><p>the version of the Python syntax</p></td>
 </tr>
-<tr class="row-even"><td>dist</td>
-<td>ironpython</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dist</p></td>
+<td><p>ironpython</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>distrel</td>
-<td>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</td>
-<td>in case of CPython the syntax release</td>
+<tr class="row-odd"><td><p>distrel</p></td>
+<td><p>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</p></td>
+<td><p>in case of CPython the syntax release</p></td>
 </tr>
-<tr class="row-even"><td>hexrelease</td>
-<td>0xb2……</td>
-<td>the resulting hex encoding</td>
+<tr class="row-even"><td><p>hexrelease</p></td>
+<td><p>0xb2……</p></td>
+<td><p>the resulting hex encoding</p></td>
 </tr>
-<tr class="row-odd"><td>compiler</td>
-<td>.NET</td>
-<td>the used C compiler</td>
+<tr class="row-odd"><td><p>compiler</p></td>
+<td><p>.NET</p></td>
+<td><p>the used C compiler</p></td>
 </tr>
-<tr class="row-even"><td>compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;micro2&gt;.&lt;build2&gt;</td>
-<td>the release version .NET compiler</td>
+<tr class="row-even"><td><p>compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;micro2&gt;.&lt;build2&gt;</p></td>
+<td><p>the release version .NET compiler</p></td>
 </tr>
-<tr class="row-odd"><td>c_compiler</td>
-<td>n.a.</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>c_compiler</p></td>
+<td><p>n.a.</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>c_compiler_version</td>
-<td>n.a.</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>c_compiler_version</p></td>
+<td><p>n.a.</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -521,14 +521,14 @@ implementation <em>CPython</em>.</p>
 <p>The <em>Jython</em> implementation is different from the standard C based interpreter distributions.
 The <em>Jython</em> package uses the <em>JVM</em> as the runtime virtual machine and integrates into <em>Java</em>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#jython" id="id14">[Jython]</a>.</p>
-<p class="last">Jython is an implementation of the Python programming language designed to run on the Java platform.
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#jython" id="id14"><span>[Jython]</span></a>.</p>
+<p>Jython is an implementation of the Python programming language designed to run on the Java platform.
 It is the successor of JPython.[3]</p>
 </div>
 <div class="figure align-center" id="id50" style="width: 250px">
 <a class="reference external image-reference" href="_static/java-integration.png"><img alt="_images/java-integration.png" src="_images/java-integration.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/java-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Structure <a class="reference external" href="_static/java-integration.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
 </div>
 <p>The characterization data is represented by the following table.
 The special case is here, that the compiler is Java, but the underlying compiler
@@ -537,54 +537,54 @@ is - intentional - not known.</p>
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="27%" />
-<col width="58%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+<col style="width: 58%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">attribute</th>
-<th class="head">values</th>
-<th class="head">remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>attribute</p></th>
+<th class="head"><p>values</p></th>
+<th class="head"><p>remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>category</td>
-<td>python</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>python</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>disttype</td>
-<td>python&lt;major0&gt;.&lt;minor0&gt;</td>
-<td>the version of the Python syntax</td>
+<tr class="row-odd"><td><p>disttype</p></td>
+<td><p>python&lt;major0&gt;.&lt;minor0&gt;</p></td>
+<td><p>the version of the Python syntax</p></td>
 </tr>
-<tr class="row-even"><td>dist</td>
-<td>jython</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dist</p></td>
+<td><p>jython</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>distrel</td>
-<td>&lt;major1&gt;.&lt;minor1&gt;.&lt;build1&gt;</td>
-<td>the release of the Jython implementation</td>
+<tr class="row-odd"><td><p>distrel</p></td>
+<td><p>&lt;major1&gt;.&lt;minor1&gt;.&lt;build1&gt;</p></td>
+<td><p>the release of the Jython implementation</p></td>
 </tr>
-<tr class="row-even"><td>hexrelease</td>
-<td>0xb2……</td>
-<td>the resulting hex encoding</td>
+<tr class="row-even"><td><p>hexrelease</p></td>
+<td><p>0xb2……</p></td>
+<td><p>the resulting hex encoding</p></td>
 </tr>
-<tr class="row-odd"><td>compiler</td>
-<td>java</td>
-<td>also relevant for the frequently applied cross-calls between Jyhton and Java</td>
+<tr class="row-odd"><td><p>compiler</p></td>
+<td><p>java</p></td>
+<td><p>also relevant for the frequently applied cross-calls between Jyhton and Java</p></td>
 </tr>
-<tr class="row-even"><td>compiler_version</td>
-<td>&lt;major0&gt;.&lt;minor0&gt;.&lt;micro0&gt;.&lt;build0&gt;</td>
-<td>the special numbering of Java: <em>1.8.0_181</em> == <em>8u181</em></td>
+<tr class="row-even"><td><p>compiler_version</p></td>
+<td><p>&lt;major0&gt;.&lt;minor0&gt;.&lt;micro0&gt;.&lt;build0&gt;</p></td>
+<td><p>the special numbering of Java: <em>1.8.0_181</em> == <em>8u181</em></p></td>
 </tr>
-<tr class="row-odd"><td>c_compiler</td>
-<td>n.a.</td>
-<td>this information is not available</td>
+<tr class="row-odd"><td><p>c_compiler</p></td>
+<td><p>n.a.</p></td>
+<td><p>this information is not available</p></td>
 </tr>
-<tr class="row-even"><td>c_compiler_version</td>
-<td>n.a.</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>c_compiler_version</p></td>
+<td><p>n.a.</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -628,16 +628,16 @@ While the implementation data of the runtime information for <em>Java</em> itsel
 the access to the native data is encapsulated.
 This is in particular expressed by the attribte <em>os.name</em>, which is set to ‘<em>java</em>’, whereas
 the attribute ‘<em>os._uname</em>’ is introduced in adddition, which covers the native platform as expected.
-For further details see <a class="reference internal" href="references.html#platformids" id="id15">[platformids]</a>.</p>
+For further details see <a class="reference internal" href="references.html#platformids" id="id15"><span>[platformids]</span></a>.</p>
 <div class="section" id="id16">
 <h3>4.4.4.1. The  Execution Model<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>The <em>Jython</em> distribution uses internally the <em>JVM</em> of the <em>Java</em> runtime environmetns.
 Therefore the <em>Python</em> code is translated into the <em>p-code</em> of <em>Java</em> and integrated into the complete
 set of the <em>Java</em> runtime libraries, including the user interface.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#jython" id="id17">[Jython]</a>.</p>
-<p class="last">Jython programs can import and use any Java class. Except for some standard modules,
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#jython" id="id17"><span>[Jython]</span></a>.</p>
+<p>Jython programs can import and use any Java class. Except for some standard modules,
 Jython programs use Java classes instead of Python modules.
 Jython includes almost all of the modules in the standard Python programming language distribution,
 lacking only some of the modules implemented originally in C.
@@ -648,7 +648,7 @@ Jython compiles to Java bytecode (intermediate language) either on demand or sta
 The access to other programming languages and the native platform particularly based on <em>C/C++</em> is still
 available via the <em>Java Native Interface</em> - <em>JNI</em>,
 or the derived packages by the community project <em>Java Native Access</em> - <em>JNA</em>.
-For some further details refer to <a class="reference internal" href="references.html#platformids" id="id18">[platformids]</a>.</p>
+For some further details refer to <a class="reference internal" href="references.html#platformids" id="id18"><span>[platformids]</span></a>.</p>
 </div>
 <div class="section" id="id19">
 <h3>4.4.4.2. The Data Aquisition<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
@@ -685,9 +685,9 @@ which are constants for all previous versions:</p>
 <span id="descrpypy"></span><h2>4.4.5. PyPy<a class="headerlink" href="#pypy" title="Permalink to this headline">¶</a></h2>
 <p>The <em>PyPy</em> distribution is based on a <em>JIT</em> compiler written in <em>Python</em> itself.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id20">[PyPy]</a>.</p>
-<p class="last">PyPy is an alternative implementation of the Python programming language[2] to CPython,
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id20"><span>[PyPy]</span></a>.</p>
+<p>PyPy is an alternative implementation of the Python programming language[2] to CPython,
 which is the standard implementation of Python. PyPy often runs faster than CPython,
 because PyPy is a just-in-time compiler, while CPython is an interpreter.
 Most Python code runs well on PyPy, except for code that depends on CPython extensions,
@@ -702,54 +702,54 @@ PyPy’s meta-tracing toolchain is called RPython.</p>
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="24%" />
-<col width="58%" />
+<col style="width: 17%" />
+<col style="width: 24%" />
+<col style="width: 58%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">attribute</th>
-<th class="head">values</th>
-<th class="head">remarks</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>attribute</p></th>
+<th class="head"><p>values</p></th>
+<th class="head"><p>remarks</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>category</td>
-<td>python</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>python</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>disttype</td>
-<td>python&lt;major0&gt;.&lt;minor0&gt;</td>
-<td>the version of the Python syntax</td>
+<tr class="row-odd"><td><p>disttype</p></td>
+<td><p>python&lt;major0&gt;.&lt;minor0&gt;</p></td>
+<td><p>the version of the Python syntax</p></td>
 </tr>
-<tr class="row-even"><td>dist</td>
-<td>pypy</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>dist</p></td>
+<td><p>pypy</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>distrel</td>
-<td>&lt;major1&gt;.&lt;minor1&gt;.&lt;build1&gt;</td>
-<td>the release of the PyPy implementation</td>
+<tr class="row-odd"><td><p>distrel</p></td>
+<td><p>&lt;major1&gt;.&lt;minor1&gt;.&lt;build1&gt;</p></td>
+<td><p>the release of the PyPy implementation</p></td>
 </tr>
-<tr class="row-even"><td>hexrelease</td>
-<td>0xb2……</td>
-<td>the resulting hex encoding</td>
+<tr class="row-even"><td><p>hexrelease</p></td>
+<td><p>0xb2……</p></td>
+<td><p>the resulting hex encoding</p></td>
 </tr>
-<tr class="row-odd"><td>compiler</td>
-<td>python</td>
-<td>in case of PyPy the CPython</td>
+<tr class="row-odd"><td><p>compiler</p></td>
+<td><p>python</p></td>
+<td><p>in case of PyPy the CPython</p></td>
 </tr>
-<tr class="row-even"><td>compiler_version</td>
-<td>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</td>
-<td>in case of PyPy the release version of the used CPython</td>
+<tr class="row-even"><td><p>compiler_version</p></td>
+<td><p>&lt;major0&gt;.&lt;minor0&gt;.&lt;build0&gt;</p></td>
+<td><p>in case of PyPy the release version of the used CPython</p></td>
 </tr>
-<tr class="row-odd"><td>c_compiler</td>
-<td>&lt;C-Compiler&gt;</td>
-<td>in case of PyP the C compiler used for <em>CPython</em> and by <em>RPython</em></td>
+<tr class="row-odd"><td><p>c_compiler</p></td>
+<td><p>&lt;C-Compiler&gt;</p></td>
+<td><p>in case of PyP the C compiler used for <em>CPython</em> and by <em>RPython</em></p></td>
 </tr>
-<tr class="row-even"><td>c_compiler_version</td>
-<td>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</td>
-<td>release of the C compiler</td>
+<tr class="row-even"><td><p>c_compiler_version</p></td>
+<td><p>&lt;major2&gt;.&lt;minor2&gt;.&lt;build2&gt;</p></td>
+<td><p>release of the C compiler</p></td>
 </tr>
 </tbody>
 </table>
@@ -761,8 +761,8 @@ PyPy’s meta-tracing toolchain is called RPython.</p>
 <h3>4.4.5.1. The  Execution Model<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <p>The <em>PyPy</em> is written in <em>RPython</em>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id22">[PyPy]</a>.</p>
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id22"><span>[PyPy]</span></a>.</p>
 <p>The PyPy interpreter itself is written in a restricted subset of Python,
 called RPython (Restricted Python).[5] RPython puts some constraints on the
 Python language such that a variable’s type can be inferred at compile time.[6]</p>
@@ -773,7 +773,7 @@ Much of this code is then compiled into machine code; and the byte code runs on 
 Finally, it includes a just-in-time (JIT) generator that builds a just-in-time compiler into the interpreter,
 given a few annotations in the interpreter source code. The generated JIT compiler is a tracing JIT.[7]</p>
 <p>RPython is now also used to write non-Python language implementations such as Pixie.[8]</p>
-<p class="last">PyPy is compatible with CPython 2.7.13.[9] PyPy3, released starting with version 2.3.1,[10] is
+<p>PyPy is compatible with CPython 2.7.13.[9] PyPy3, released starting with version 2.3.1,[10] is
 compatible with CPython 3.5.3.[9]
 Both versions have JIT compilation support on 32-bit/64-bit x86 and ARM processors.[11]
 It is tested nightly on Windows, Linux, OpenBSD and Mac OS X. PyPy is able to run pure Python software
@@ -785,15 +785,15 @@ that does not rely on implementation-specific features.[12]</p>
 <h3>4.4.5.2. PyPy Extension Modules<a class="headerlink" href="#pypy-extension-modules" title="Permalink to this headline">¶</a></h3>
 <p>The interface for extensions depends on the applied interface, for an overview
 refer to <a class="reference internal" href="#hpcwithpython"><span class="std std-ref">HPC with Python</span></a>.
-For an investigation and overview of alternatives by <em>Cling</em> refer to <a class="reference internal" href="references.html#hpcpypycling" id="id23">[HPCPYPYCLING]</a>.</p>
+For an investigation and overview of alternatives by <em>Cling</em> refer to <a class="reference internal" href="references.html#hpcpypycling" id="id23"><span>[HPCPYPYCLING]</span></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id24">[PyPy]</a>.</p>
-<p class="last">There is a compatibility layer for CPython C API extensions called CPyExt, but it is incomplete and experimental.
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id24"><span>[PyPy]</span></a>.</p>
+<p>There is a compatibility layer for CPython C API extensions called CPyExt, but it is incomplete and experimental.
 The preferred way of interfacing with C shared libraries is through the built-in CFFI or ctypes libraries.</p>
 </div>
 <p>For the compiled extension modules some special handling is required,
-this is extracted into a specific package coming soon <a class="reference internal" href="references.html#extensionids" id="id25">[extensionids]</a>.</p>
+this is extracted into a specific package coming soon <a class="reference internal" href="references.html#extensionids" id="id25"><span>[extensionids]</span></a>.</p>
 </div>
 <div class="section" id="id26">
 <h3>4.4.5.3. The Data Aquisition<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
@@ -809,38 +809,38 @@ native <em>C/C++</em> modules, and/or compiled <em>Python</em> code like provide
 <div><div class="centertab">
 <div class="indextab">
 <div class="nonbreakheadtab">
-<div class="autocolumntab"><table border="1" class="docutils">
+<div class="autocolumntab"><table class="docutils align-default">
 <colgroup>
-<col width="43%" />
-<col width="26%" />
-<col width="31%" />
+<col style="width: 43%" />
+<col style="width: 26%" />
+<col style="width: 31%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">type</th>
-<th class="head">project</th>
-<th class="head">reference</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>project</p></th>
+<th class="head"><p>reference</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>native</td>
-<td>ctypes</td>
-<td><a class="reference internal" href="references.html#ctypes" id="id27">[CTYPES]</a></td>
+<tbody>
+<tr class="row-even"><td><p>native</p></td>
+<td><p>ctypes</p></td>
+<td><p><a class="reference internal" href="references.html#ctypes" id="id27"><span>[CTYPES]</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>native</td>
-<td>SWIG</td>
-<td><a class="reference internal" href="references.html#swig" id="id28">[SWIG]</a></td>
+<tr class="row-odd"><td><p>native</p></td>
+<td><p>SWIG</p></td>
+<td><p><a class="reference internal" href="references.html#swig" id="id28"><span>[SWIG]</span></a></p></td>
 </tr>
-<tr class="row-even"><td>native</td>
-<td>CFFI</td>
-<td><a class="reference internal" href="references.html#cffi" id="id29">[CFFI]</a></td>
+<tr class="row-even"><td><p>native</p></td>
+<td><p>CFFI</p></td>
+<td><p><a class="reference internal" href="references.html#cffi" id="id29"><span>[CFFI]</span></a></p></td>
 </tr>
-<tr class="row-odd"><td>native</td>
-<td>Cling</td>
-<td><a class="reference internal" href="references.html#cppyy" id="id30">[CPPYY]</a></td>
+<tr class="row-odd"><td><p>native</p></td>
+<td><p>Cling</p></td>
+<td><p><a class="reference internal" href="references.html#cppyy" id="id30"><span>[CPPYY]</span></a></p></td>
 </tr>
-<tr class="row-even"><td>Python + ext.</td>
-<td>CPython</td>
-<td><a class="reference internal" href="references.html#cython" id="id31">[Cython]</a></td>
+<tr class="row-even"><td><p>Python + ext.</p></td>
+<td><p>CPython</p></td>
+<td><p><a class="reference internal" href="references.html#cython" id="id31"><span>[Cython]</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -849,49 +849,49 @@ native <em>C/C++</em> modules, and/or compiled <em>Python</em> code like provide
 </div>
 </div></div></blockquote>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id32">[PyPy]</a>.</p>
-<p class="last">There is a compatibility layer for CPython C API extensions called CPyExt, but it is incomplete and experimental.
+<p class="admonition-title">Note</p>
+<p>See Wikipedia - <a class="reference internal" href="references.html#pypy" id="id32"><span>[PyPy]</span></a>.</p>
+<p>There is a compatibility layer for CPython C API extensions called CPyExt, but it is incomplete and experimental.
 The preferred way of interfacing with C shared libraries is through the built-in CFFI or ctypes libraries.</p>
 </div>
-<p>The compiled extension modules are supported by the package <em>extensionids</em> coming soon <a class="reference internal" href="references.html#extensionids" id="id33">[extensionids]</a>.
-For an investigation and overview of alternatives by <em>Cling</em> refer to <a class="reference internal" href="references.html#hpcpypycling" id="id34">[HPCPYPYCLING]</a>,
-for a comparison of “Performance of Python runtimes on a non-numeric scientific code” refer to <a class="reference internal" href="references.html#pyimpperform" id="id35">[PYIMPPERFORM]</a>.</p>
+<p>The compiled extension modules are supported by the package <em>extensionids</em> coming soon <a class="reference internal" href="references.html#extensionids" id="id33"><span>[extensionids]</span></a>.
+For an investigation and overview of alternatives by <em>Cling</em> refer to <a class="reference internal" href="references.html#hpcpypycling" id="id34"><span>[HPCPYPYCLING]</span></a>,
+for a comparison of “Performance of Python runtimes on a non-numeric scientific code” refer to <a class="reference internal" href="references.html#pyimpperform" id="id35"><span>[PYIMPPERFORM]</span></a>.</p>
 </div>
 <div class="section" id="native-python-as-virtual-os">
 <h2>4.4.7. Native Python as Virtual OS<a class="headerlink" href="#native-python-as-virtual-os" title="Permalink to this headline">¶</a></h2>
 <p>Some special <em>Python</em> distributions are supported for small embedded systems with limited resources.
-The distributions <em>MicroPython</em> <a class="reference internal" href="references.html#micropython" id="id36">[MicroPython]</a> and ithe derived <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id37">[CircuitPython]</a> provide a
+The distributions <em>MicroPython</em> <a class="reference internal" href="references.html#micropython" id="id36"><span>[MicroPython]</span></a> and ithe derived <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id37"><span>[CircuitPython]</span></a> provide a
 literally native <em>Python</em> environment,
 where the interpreter itself is the only and one execution environemnt which is executed as a virtual OS.
 The interactive command line user interface of the <em>Python</em> interpreter is hereby similar to a
-common <em>shell</em> <a class="reference internal" href="references.html#shell" id="id38">[SHELL]</a> replacing the text based dialogue console <a class="reference internal" href="references.html#shelltxt" id="id39">[SHELLTXT]</a>.
+common <em>shell</em> <a class="reference internal" href="references.html#shell" id="id38"><span>[SHELL]</span></a> replacing the text based dialogue console <a class="reference internal" href="references.html#shelltxt" id="id39"><span>[SHELLTXT]</span></a>.
 Thus these <em>Python</em> implementations of this type represent the complete process execution frame including
 the lower OS platform as described by <em>platformids</em>, and  <em>machineids</em>.</p>
 <div class="figure align-center" id="id51" style="width: 550px">
 <span id="figure-nativeintegratedshell"></span><a class="reference external image-reference" href="_static/systems-ids-native-shell.png"><img alt="_images/systems-ids-native-shell.png" src="_images/systems-ids-native-shell.png" /></a>
-<p class="caption"><span class="caption-text">Figure: Integrated Native Shell <a class="reference external" href="_static/systems-ids-native-shell.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: Integrated Native Shell <a class="reference external" href="_static/systems-ids-native-shell.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
 </div>
 <p>The native <em>Python</em> interpreter includes the required low-level drivers and provides
-basically a Firmware <a class="reference internal" href="references.html#firmware" id="id40">[FIRMWARE]</a> stack including the compelete high-level execution frame.
-The targeted devices are small SOC such as the original MicroPython <a class="reference internal" href="references.html#micropython" id="id41">[MicroPython]</a> board</p>
+basically a Firmware <a class="reference internal" href="references.html#firmware" id="id40"><span>[FIRMWARE]</span></a> stack including the compelete high-level execution frame.
+The targeted devices are small SOC such as the original MicroPython <a class="reference internal" href="references.html#micropython" id="id41"><span>[MicroPython]</span></a> board</p>
 <div class="figure align-center" id="id52" style="width: 200px">
 <a class="reference external image-reference" href="https://micropython.org/"><img alt="_images/micropython-device.png" src="_images/micropython-device.png" /></a>
-<p class="caption"><span class="caption-text">Figure: MicroPython Device <a class="reference external" href="_static/micropython-device.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: MicroPython Device <a class="reference external" href="_static/micropython-device.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id52" title="Permalink to this image">¶</a></p>
 </div>
-<p>or the boards supported by <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id42">[CircuitPython]</a></p>
+<p>or the boards supported by <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id42"><span>[CircuitPython]</span></a></p>
 <div class="figure align-center" id="id53" style="width: 300px">
 <a class="reference external image-reference" href="https://circuitpython.org/"><img alt="_images/circuitpython-device.png" src="_images/circuitpython-device.png" /></a>
-<p class="caption"><span class="caption-text">Figure: CircuitPython Device <a class="reference external" href="_static/circuitpython-device.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span></p>
+<p class="caption"><span class="caption-text">Figure: CircuitPython Device <a class="reference external" href="_static/circuitpython-device.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id53" title="Permalink to this image">¶</a></p>
 </div>
-<p>For differences between <em>CPython</em> and <em>MicroPython</em> see <a class="reference internal" href="references.html#microvscpython" id="id43">[MicroVsCPython]</a>.</p>
+<p>For differences between <em>CPython</em> and <em>MicroPython</em> see <a class="reference internal" href="references.html#microvscpython" id="id43"><span>[MicroVsCPython]</span></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The current version of <em>pythonids</em> does not yet support these implementations.</p>
+<p class="admonition-title">Note</p>
+<p>The current version of <em>pythonids</em> does not yet support these implementations.</p>
 </div>
 <div class="section" id="micropython">
 <span id="embeddedmicropy"></span><h3>4.4.7.1. MicroPython<a class="headerlink" href="#micropython" title="Permalink to this headline">¶</a></h3>
-<p>The Python variant <em>MicroPython</em> <a class="reference internal" href="references.html#micropython" id="id44">[MicroPython]</a> is targeting small devices with limited resources of
+<p>The Python variant <em>MicroPython</em> <a class="reference internal" href="references.html#micropython" id="id44"><span>[MicroPython]</span></a> is targeting small devices with limited resources of
 in particular small CPUs and memory and storage limited to some kB.
 <em>MicroPython</em> represents on those devices the interactive Python interface as the user interface in
 complete replacement of a shell.
@@ -905,8 +905,8 @@ The <em>platformids</em> provides custom plugins with standard interfaces for th
 </div>
 <div class="section" id="circuitpython">
 <span id="embeddedcircuitpy"></span><h3>4.4.7.2. CircuitPython<a class="headerlink" href="#circuitpython" title="Permalink to this headline">¶</a></h3>
-<p>The Python variant <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id45">[CircuitPython]</a> is a specialized variant provided by the
-company Adafruit Industries Inc. <a class="reference internal" href="references.html#adafruit" id="id46">[ADAFRUIT]</a> customized for it’s small devices.</p>
+<p>The Python variant <em>CircuitPython</em> <a class="reference internal" href="references.html#circuitpython" id="id45"><span>[CircuitPython]</span></a> is a specialized variant provided by the
+company Adafruit Industries Inc. <a class="reference internal" href="references.html#adafruit" id="id46"><span>[ADAFRUIT]</span></a> customized for it’s small devices.</p>
 <p><em>available soon</em></p>
 </div>
 </div>
@@ -934,7 +934,7 @@ company Adafruit Industries Inc. <a class="reference internal" href="references.
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>

@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.36
+                0.1.37
               </div>
             
           
@@ -208,12 +208,12 @@ constitute a vector of a logical number assembled with a series of independent
 numbers based on a set of ordered  heterogeneous virtual radix values.
 The following version</p>
 <div class="math" id="equation-hierarchical-integer-vector">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-hierarchical-integer-vector" title="Permalink to this equation">¶</a></span><img src="_images/math/7b53b8185365f79f994597172558c250e51a5208.png" alt="\begin{split}
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-hierarchical-integer-vector" title="Permalink to this equation">¶</a></span><img src="_images/math/7f80867c72627ab9b052a6a437c885d2fc502f5e.png" alt="\begin{split}
 V(A, B, C) = (A, B, C)
 \end{split}"/></p>
 </div><p>is commonly expressed also by the string</p>
 <div class="math">
-<p><img src="_images/math/2a81ac158e8cb52e371801ba47079f78b91acc08.png" alt="\begin{split}
+<p><img src="_images/math/fbefe71fd94aa04eb8c44ab6729dd4a66b4a6412.png" alt="\begin{split}
 V(A, B, C) := 'A.B.C'
 \end{split}"/></p>
 </div><p>The resulting vector requires in programming languages a number of comparison operations
@@ -305,8 +305,9 @@ bit mask.</p>
 <p>In the following principle scheme four values of 4-bit wide integers are combined into one
 numeric value.</p>
 <blockquote>
-<div><a class="reference internal" href="_images/bitarray-priciple.png"><img alt="bitmaskprinciple" src="_images/bitarray-priciple.png" style="width: 220px;" /></a>
-<a class="reference external" href="_static/bitarray-priciple.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></div></blockquote>
+<div><p><a class="reference internal" href="_images/bitarray-priciple.png"><img alt="bitmaskprinciple" src="_images/bitarray-priciple.png" style="width: 220px;" /></a>
+<a class="reference external" href="_static/bitarray-priciple.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></p>
+</div></blockquote>
 <p>by this compression the comparison operation</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -373,8 +374,8 @@ and performance optimization.</p>
 defines finally the dominant execution performance at least in case of loops.
 The mapping has changed for Python3 to infinite value representation, while ist has range optimization
 for Python2 based on the <em>maxint</em> of the platform - 32/bit or 64/bit.
-Thus Python2 processes integer values smaller than <em>maxint</em> significantly faster than Python3 - see <a class="reference internal" href="references.html#pyintperf2vs3a" id="id1">[PYINTPERF2VS3A]</a>
-and <a class="reference internal" href="references.html#pyintperf2vs3b" id="id2">[PYINTPERF2VS3B]</a>.</p>
+Thus Python2 processes integer values smaller than <em>maxint</em> significantly faster than Python3 - see <a class="reference internal" href="references.html#pyintperf2vs3a" id="id1"><span>[PYINTPERF2VS3A]</span></a>
+and <a class="reference internal" href="references.html#pyintperf2vs3b" id="id2"><span>[PYINTPERF2VS3B]</span></a>.</p>
 <p>The <em>pythonids</em> therefore maps the distribution information to a scalar integer as bitmask vector of 32-bit width,
 the python release to a scalar bitmask vector of 16-bit width.</p>
 </div>
@@ -387,11 +388,11 @@ superscript of the dynamic radix defined by the righthand vector items.
 Each resulting radix value is based on it’s location in the vector, the sum of the bit-mask
 widths of the right-hand side items, and in case of an eventual overflow also on the item itself.</p>
 <div class="math" id="equation-scalar-of-hoerarchical-integer-vector">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-scalar-of-hoerarchical-integer-vector" title="Permalink to this equation">¶</a></span><img src="_images/math/73ba013b3fce7a3a7e52dfa6d664d04ddc06c8df.png" alt="|V(A, B, C)| = |(A, B, C)| = X_{2}(A, B, C){^{A}} + X_{1}(B, C){^{B}} + X_{0}(C){^{C}}"/></p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-scalar-of-hoerarchical-integer-vector" title="Permalink to this equation">¶</a></span><img src="_images/math/eec9e1064c13214cf4e355691ac0e24ffe6a1c38.png" alt="|V(A, B, C)| = |(A, B, C)| = X_{2}(A, B, C){^{A}} + X_{1}(B, C){^{B}} + X_{0}(C){^{C}}"/></p>
 </div><p>The represented numeric value could be expressed as a general equotation for the defined adaptive
 polynominal of fixed size bit masks:</p>
 <div class="math" id="equation-datextime-vector-absolute">
-<p><span class="eqno">(3)<a class="headerlink" href="#equation-datextime-vector-absolute" title="Permalink to this equation">¶</a></span><img src="_images/math/5d845e60ae9f4dc925435f9fa9fcec1e24f79da0.png" alt="|V(x_{i}){_{\substack{0&lt;=i&lt;n}}}| =  \sum_{\substack{0&lt;=i&lt;=n\\\text{$i$ item}}}{X_{i}(x_{j})}{^{x_{i}}|{_{\substack{0&lt;=j&lt;=i}}} }:
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-datextime-vector-absolute" title="Permalink to this equation">¶</a></span><img src="_images/math/9ac669fa9f33fd2885e1eac314c87094fa03051c.png" alt="|V(x_{i}){_{\substack{0&lt;=i&lt;n}}}| =  \sum_{\substack{0&lt;=i&lt;=n\\\text{$i$ item}}}{X_{i}(x_{j})}{^{x_{i}}|{_{\substack{0&lt;=j&lt;=i}}} }:
 n = items(V);  x \in\mathbb{N}{_0}; i,j \in\mathbb{N}{_0}."/></p>
 </div><p>The resulting numeric value is defined by the sum of each value of the vector items
 once these are moved to their coreesponding bit position via a shift operation.
@@ -466,22 +467,22 @@ Here libraries such as <em>decimal</em> provide additional enhancements.</p>
 static numerical threshold dependencies of numeric vectors.
 Prominents applications are</p>
 <ul>
-<li><p class="first"><a class="reference external" href="python_categorization.html">Bit Masks for Python Releases</a></p>
+<li><p><a class="reference external" href="python_categorization.html">Bit Masks for Python Releases</a></p>
 <p>The Python release itself is here is a quite good example and actually the originator
 for this package.</p>
 </li>
-<li><p class="first">Bit Masks for OS Type and Distribution of System Platforms</p>
+<li><p>Bit Masks for OS Type and Distribution of System Platforms</p>
 <p>The platform dependecy on the operating system, the packaged distribution are for
 system development frequently to be checked repetitive.
 Thus the bit mask encryption is a simple means of performance enhancement.</p>
-<p>See <a class="reference internal" href="references.html#platformids" id="id3">[platformids]</a>.</p>
+<p>See <a class="reference internal" href="references.html#platformids" id="id3"><span>[platformids]</span></a>.</p>
 </li>
-<li><p class="first">Bit Masks for Machine Platforms</p>
+<li><p>Bit Masks for Machine Platforms</p>
 <p>The base layer of a virtual or physical machine are for system development frequently
 to be checked repetitive.</p>
-<p>See <a class="reference internal" href="references.html#machineids" id="id4">[machineids]</a>.</p>
+<p>See <a class="reference internal" href="references.html#machineids" id="id4"><span>[machineids]</span></a>.</p>
 </li>
-<li><p class="first">Bit Masks for Python Extensions</p>
+<li><p>Bit Masks for Python Extensions</p>
 <p>The most of the Python interpreters and compilers provide extension modules for the implementation
 of native high-performance applications.
 These could be commonly supplied either as compiled <em>C/C++</em> modules e.g. for <em>CPython</em> and <em>PyPy</em>,
@@ -489,7 +490,7 @@ or e.g. as <em>Java</em> extensions for <em>Jython</em>, or <em>IronPython</em> 
 <p>Another approach is here for the <em>C/C++</em> based extensions is the application of <em>Cython</em> or it’s
 predecessor <em>PyRex</em>, which provide compiler for extended native Python.
 Other integration frameworks for extensions include <em>ctypes</em>, <em>CFFI</em>, and <em>SWIG</em>.</p>
-<p>See <a class="reference internal" href="references.html#extensionids" id="id5">[extensionids]</a>.</p>
+<p>See <a class="reference internal" href="references.html#extensionids" id="id5"><span>[extensionids]</span></a>.</p>
 </li>
 </ul>
 </div>
@@ -517,7 +518,7 @@ Other integration frameworks for extensions include <em>ctypes</em>, <em>CFFI</e
     <p>
         &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 04, 2019.
+        Last updated on Dec 13, 2019.
       </span>
 
     </p>
