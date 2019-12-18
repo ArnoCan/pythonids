@@ -24,7 +24,7 @@ import sphinx_rtd_theme  # local installed theme
 
 __author__ = 'Arno-Can Uestuensoez'
 __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
-__copyright__ = "Copyright (C) 2016 Arno-Can Uestuensoez" \
+__copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez" \
                 " @Ingenieurbuero Arno-Can Uestuensoez"
 __version__ = '0.1.37'
 __uuid__ = "45167c30-3261-4a38-9de4-d7151348ba48"

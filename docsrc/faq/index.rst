@@ -25,4 +25,4 @@ Basic
    :maxdepth: 1
    :includehidden:
 
-
+   basic

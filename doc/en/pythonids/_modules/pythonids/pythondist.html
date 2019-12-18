@@ -206,6 +206,7 @@
 
 <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
 
+<span class="kn">import</span> <span class="nn">pythonids</span>
 <span class="kn">from</span> <span class="nn">pythonids</span> <span class="k">import</span> <span class="n">PythonIDsError</span><span class="p">,</span> <span class="n">ISSTR</span><span class="p">,</span> <span class="n">decode_pysyntax_str_to_num</span>
 
 
@@ -213,7 +214,7 @@
 <span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
 <span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2010-2018 Arno-Can Uestuensoez&quot;</span> \
                 <span class="s2">&quot; @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1.31&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;0.1.35&#39;</span>
 <span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;5624dc41-775a-4d17-ac42-14a0d5c41d1a&quot;</span>
 
 <span class="n">__docformat__</span> <span class="o">=</span> <span class="s2">&quot;restructuredtext en&quot;</span>
@@ -442,14 +443,17 @@
 
 
 <span class="k">def</span> <span class="nf">_encode_distrel_bitmask</span><span class="p">(</span><span class="n">dx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dz</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># 32bit - dx.dy.dz</span>
     <span class="k">return</span> <span class="p">(</span>
           <span class="p">(</span><span class="n">dx</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span>  <span class="c1"># bit 17 - 12 - see version_info[0]</span>
-        <span class="o">|</span> <span class="p">(</span><span class="n">dy</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>  <span class="c1"># bit 11 -  6 - see version_info[1]</span>
-        <span class="o">|</span> <span class="p">(</span><span class="n">dz</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span>  <span class="c1"># bit  5 -  0 - see version_info[2] </span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">dy</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span>   <span class="c1"># bit 11 -  6 - see version_info[1]</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">dz</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span>        <span class="c1"># bit  5 -  0 - see version_info[2] </span>
+
        <span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_encode_distrel_str_bitmask</span><span class="p">(</span><span class="n">sxyz</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="c1"># 32bit</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">STR2DISTREL</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\1&#39;</span><span class="p">,</span> <span class="n">sxyz</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>  <span class="c1"># variable length</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -470,6 +474,7 @@
 
 
 <span class="k">def</span> <span class="nf">_encode_disttype_bitmask</span><span class="p">(</span><span class="n">sma</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">smi</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># 32bit</span>
     <span class="k">return</span> <span class="p">(</span>
           <span class="p">(</span><span class="n">sma</span> <span class="o">&amp;</span> <span class="mi">7</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">28</span>  <span class="c1"># bit 30 - 28 - see version_info[0]</span>
         <span class="o">|</span> <span class="p">(</span><span class="n">smi</span> <span class="o">&amp;</span> <span class="mi">31</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">23</span>  <span class="c1"># bit 27 - 23 - see version_info[1]</span>
@@ -477,6 +482,7 @@
 
 
 <span class="k">def</span> <span class="nf">_encode_disttype_str_bitmask</span><span class="p">(</span><span class="n">sxy</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="c1"># 32bit</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">STR2DISTREL</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\1&#39;</span><span class="p">,</span> <span class="n">sxy</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>  <span class="c1"># variable length</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -865,6 +871,17 @@
 <span class="sd">                    </span>
 <span class="sd">                    default := False</span>
 <span class="sd">        </span>
+<span class="sd">                valuetype:</span>
+<span class="sd">                    Defines the representation of the values - where possible::</span>
+
+<span class="sd">                        valuetype := (</span>
+<span class="sd">                              raw   # original internal value</span>
+<span class="sd">                            | hex   # as hex</span>
+<span class="sd">                            | sym   # mapped to symbolic names</span>
+<span class="sd">                        )</span>
+<span class="sd">                        </span>
+<span class="sd">                        default := sym</span>
+
 <span class="sd">        Returns:</span>
 <span class="sd">        </span>
 <span class="sd">            Initial instance, optionally initialized by the provided</span>
@@ -875,7 +892,8 @@
 <span class="sd">            </span>
 <span class="sd">            pass-through</span>
 <span class="sd">    </span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valuetype</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;valuetype&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         
         <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">PYE_PYTHON</span>  <span class="c1"># : the category ID</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">disttype</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># : the type ID of the syntax</span>
@@ -1130,12 +1148,22 @@
             <span class="n">_cprep</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
                 <span class="sa">r</span><span class="s1">&#39;^([0-9.]+).*\n.*PyPy *([0-9.]+) [^ ]+ ([^ ]+) +([0-9.]+).*$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1@@\2@@\3@@\4&#39;</span><span class="p">,</span> 
                 <span class="n">_c</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>  <span class="c1"># @UndefinedVariable</span>
-            <span class="n">_python_version</span><span class="p">,</span> <span class="n">_distrel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler</span><span class="p">,</span> <span class="n">_c_compiler_version</span> <span class="o">=</span> <span class="n">_cprep</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@@&#39;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">_python_version</span><span class="p">,</span> <span class="n">_distrel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler</span><span class="p">,</span> <span class="n">_c_compiler_version</span> <span class="o">=</span> <span class="n">_cprep</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@@&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">distrel</span> <span class="o">=</span> <span class="n">_encode_distrel_str_bitmask</span><span class="p">(</span><span class="n">_distrel</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">distrel</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">_c_compiler_version</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                <span class="n">_python_version</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">distrel</span> <span class="o">=</span> <span class="n">_encode_distrel_str_bitmask</span><span class="p">(</span><span class="n">_distrel</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">_forceall</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_c_compiler_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span> 
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_c_compiler_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,)</span>
+                    <span class="k">pass</span>
+                 
                 <span class="bp">self</span><span class="o">.</span><span class="n">c_libc_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">libc_ver</span><span class="p">()</span>  <span class="c1"># default is current instance itself</span>
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span> 
@@ -1209,33 +1237,143 @@
 
 <div class="viewcode-block" id="PythonDist.__str__"><a class="viewcode-back" href="../../pythonids.pythondist.html#pythonids.pythondist.PythonDist.__str__">[docs]</a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s1">&#39;&#39;</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;category           = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">num2name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">])</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;category           = </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pretty_format</span><span class="p">()</span></div>
+        
+    <span class="k">def</span> <span class="nf">pretty_format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates printable string of formatted information about the Python implementation.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            kargs:</span>
+<span class="sd">                forceall:</span>
+<span class="sd">                    Prints all available information::</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;disttype           = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num2name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">disttype</span><span class="p">])</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;disttype           = </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="sd">                        forceall := (</span>
+<span class="sd">                              True   # print all including the compiler of the interpreter</span>
+<span class="sd">                            | False  # print the interpreter data only </span>
+<span class="sd">                        )</span>
 
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;dist               = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">num2name</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="p">])</span>
-        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;dist               = </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="sd">                layout:</span>
+<span class="sd">                    Defines the displayed layout/syntax::</span>
 
-        <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;distrel            = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">distrel</span><span class="p">)</span><span class="o">.</span><span class="n">distrel</span><span class="p">)</span>
-        <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;hexrelease         = 0x</span><span class="si">%08x</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hexrelease</span><span class="p">)</span>
+<span class="sd">                        layout := (</span>
+<span class="sd">                              str</span>
+<span class="sd">                            | repr</span>
+<span class="sd">                            | json</span>
+<span class="sd">                        )</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forceall</span><span class="p">:</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;compiler           = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
-            <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;compiler_version   = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler_version_tuple</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">PYDIST</span> <span class="o">&amp;</span> <span class="n">PYE_DIST</span> <span class="o">==</span> <span class="n">PYE_PYPY</span><span class="p">:</span>
-                <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;c_compiler         = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c_compiler</span><span class="p">)</span>
-                <span class="n">res</span> <span class="o">+=</span> <span class="s2">&quot;c_compiler_version = </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span><span class="p">)</span>
+<span class="sd">                valuetype:</span>
+<span class="sd">                    Defines the representation of the values - where possible::</span>
+
+<span class="sd">                        valuetype := (</span>
+<span class="sd">                              raw   # original internal value</span>
+<span class="sd">                            | hex   # as hex</span>
+<span class="sd">                            | sym   # mapped to symbolic names</span>
+<span class="sd">                        )</span>
+<span class="sd">                        </span>
+<span class="sd">                        default := sym</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Formatted string.</span>
+<span class="sd">        </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_forceall</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;forceall&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forceall</span><span class="p">)</span>
+        <span class="n">_valuetype</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;valuetype&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">valuetype</span><span class="p">)</span>
+        <span class="n">_layout</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;layout&#39;</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
+
+        <span class="n">_hex</span> <span class="o">=</span> <span class="n">_valuetype</span> <span class="o">==</span> <span class="s1">&#39;hex&#39;</span>
+        <span class="n">_raw</span> <span class="o">=</span> <span class="n">_valuetype</span> <span class="o">==</span> <span class="s1">&#39;raw&#39;</span>
+        
+        <span class="k">def</span> <span class="nf">maptostr</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">_hex</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">_raw</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">num2name</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_layout</span> <span class="o">==</span> <span class="s1">&#39;str&#39;</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">%-20s</span><span class="s2">= </span><span class="si">%s</span><span class="s2">&quot;</span>
                 
-        <span class="k">return</span> <span class="n">res</span></div>
+            <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">))</span>
+            <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;disttype&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">disttype</span><span class="p">))</span>
+            <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;dist&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="p">))</span>
+            
+            <span class="k">if</span> <span class="n">_raw</span> <span class="ow">or</span> <span class="n">_hex</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;distrel&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">distrel</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;distrel&quot;</span><span class="p">,</span> <span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">distrel</span><span class="p">)</span><span class="o">.</span><span class="n">distrel</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">_raw</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;hexrelease&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hexrelease</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;hexrelease&quot;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hexrelease</span><span class="p">))</span>
+    
+            <span class="k">if</span> <span class="n">_forceall</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;compiler&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">))</span>
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;compiler_version&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler_version_tuple</span><span class="p">)))</span>
+                <span class="k">if</span> <span class="n">PYDIST</span> <span class="o">&amp;</span> <span class="n">PYE_DIST</span> <span class="o">==</span> <span class="n">PYE_PYPY</span><span class="p">:</span>
+                    <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;compiler&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c_compiler</span><span class="p">))</span>
+                    <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;compiler_version&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span><span class="p">)))</span>
+    
+                <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;implementation&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="n">_layout</span> <span class="o">==</span> <span class="s1">&#39;repr&#39;</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+
+<span class="c1">#             res = &quot;{&quot;</span>
+<span class="c1"># </span>
+<span class="c1">#             _format = &quot;\n%-20s= %s&quot;</span>
+<span class="c1">#                 </span>
+<span class="c1">#             try:</span>
+<span class="c1">#                 res += &#39;&quot;category&quot;: &quot;&#39; + maptostr(self.category) + &#39;&quot;, &#39;</span>
+<span class="c1">#             except KeyError:</span>
+<span class="c1">#                 res += &#39;&quot;category&quot;: &quot;&quot;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#             try:</span>
+<span class="c1">#                 res += &#39;&quot;disttype&quot;: &quot;&#39; + maptostr(self.disttype) + &#39;&quot;, &#39;</span>
+<span class="c1">#             except KeyError:</span>
+<span class="c1">#                 res += &#39;&quot;disttype&quot;: &quot;&quot;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#             try:</span>
+<span class="c1">#                 res += &#39;&quot;dist&quot;: &quot;&#39; + maptostr(self.dist) + &#39;&quot;, &#39;</span>
+<span class="c1">#             except KeyError:</span>
+<span class="c1">#                 res += &#39;&quot;dist&quot;: &quot;&quot;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#             if _raw or _hex:</span>
+<span class="c1">#                 res += &#39;&quot;distrel&quot;: &quot;&#39; + maptostr(self.distrel) + &#39;&quot;, &#39;</span>
+<span class="c1">#             else:</span>
+<span class="c1">#                 res += &#39;&quot;distrel&quot;: &quot;&#39; + str(decode_pydist_32bit_to_tuple_str(self.distrel).distrel) + &#39;&quot;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#             if _raw:</span>
+<span class="c1">#                 res += &#39;&quot;hexrelease&quot;: &#39; + str(self.hexrelease) + &#39;, &#39;</span>
+<span class="c1">#             else:</span>
+<span class="c1">#                 res += &#39;&quot;hexrelease&quot;: &#39; + str(self.hexrelease) + &#39;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#             if self.forceall:</span>
+<span class="c1">#                 res += &#39;&quot;compiler&quot;: &quot;&#39; + str(self.compiler) + &#39;&quot;, &#39;</span>
+<span class="c1">#                 res += &#39;&quot;compiler_version&quot;: &quot;&#39; + str(&#39;.&#39;.join(str(i) for i in self.compiler_version_tuple)) + &#39;&quot;, &#39;</span>
+<span class="c1">#                 if PYDIST &amp; PYE_DIST == PYE_PYPY:</span>
+<span class="c1">#                     res += &#39;&quot;compiler&quot;: &#39; + str(self.c_compiler) + &#39;, &#39;</span>
+<span class="c1">#                     res += &#39;&quot;compiler_version&quot;: &quot;&#39; + str(&#39;.&#39;.join(str(i) for i in self.c_compiler_version_tuple)) + &#39;&quot;, &#39;</span>
+<span class="c1">#     </span>
+<span class="c1">#                 res += &#39;&quot;implementation&quot;: &quot;&#39; + str(sys.executable) + &#39;&quot;, &#39;</span>
+<span class="c1"># </span>
+<span class="c1">#             res += &#39;}&#39;</span>
+        
+        <span class="k">elif</span> <span class="n">_layout</span> <span class="o">==</span> <span class="s1">&#39;json&#39;</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_json</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">res</span>
 
 <div class="viewcode-block" id="PythonDist.__getattr__"><a class="viewcode-back" href="../../pythonids.pythondist.html#pythonids.pythondist.PythonDist.__getattr__">[docs]</a>    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Gets the selected attribute.&quot;&quot;&quot;</span>
@@ -1963,9 +2101,64 @@
                 <span class="n">res</span> <span class="o">|=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distrel</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="k">pass</span>
-            <span class="k">return</span> <span class="n">res</span></div></div>
+            <span class="k">return</span> <span class="n">res</span></div>
 
-            
+    <span class="k">def</span> <span class="nf">get_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an in-memory structure compatible to the package &#39;json&#39;.</span>
+<span class="sd">        </span>
+<span class="sd">                forceall:</span>
+<span class="sd">                    Includes all available information::</span>
+
+<span class="sd">                        forceall := (</span>
+<span class="sd">                              True   # including the compiler of the interpreter</span>
+<span class="sd">                            | False  # the interpreter data only </span>
+<span class="sd">                        )</span>
+
+<span class="sd">                valuetype:</span>
+<span class="sd">                    Defines the representation of the values - where possible::</span>
+
+<span class="sd">                        valuetype := (</span>
+<span class="sd">                              raw   # original internal value</span>
+<span class="sd">                            | sym   # mapped to symbolic names</span>
+<span class="sd">                        )</span>
+<span class="sd">                        </span>
+<span class="sd">                        default := sym</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Formatted string.</span>
+<span class="sd">        </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">_valuetype</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;valuetype&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">maptostr</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">_valuetype</span> <span class="o">==</span> <span class="s1">&#39;raw&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">num2name</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">r</span>
+        
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;disttype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">disttype</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;dist&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;distrel&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">distrel</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">[</span><span class="s2">&quot;hexrelease&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hexrelease</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forceall</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;compiler&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;compiler_version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler_version_tuple</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">PYDIST</span> <span class="o">&amp;</span> <span class="n">PYE_DIST</span> <span class="o">==</span> <span class="n">PYE_PYPY</span><span class="p">:</span>
+                <span class="n">res</span><span class="p">[</span><span class="s2">&quot;compiler&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c_compiler</span><span class="p">)</span>
+                <span class="n">res</span><span class="p">[</span><span class="s2">&quot;compiler_version&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span><span class="p">))</span>
+
+            <span class="n">res</span><span class="p">[</span><span class="s2">&quot;implementation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">res</span></div>
+    
 <span class="c1">#</span>
 <span class="c1"># the default is with core attributes only - which almost for sure must not raise exceptions at all</span>
 <span class="c1">#</span>
@@ -1998,9 +2191,9 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

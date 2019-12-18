@@ -51,7 +51,7 @@ def decode_pysyntax_16bit_to_str(xyz, form="%d.%d.%d"):
     return form % (
        (xyz >> 13) &   7,  # bit 15 - 13 - see version_info[0] - PythonX
        (xyz >>  8) &  31,  # bit 12 -  8 - see version_info[1] - Pythonx.Y
-        xyz        & 255,  # bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y
+        xyz        & 255,  # bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Z
     )
 
 
@@ -75,7 +75,7 @@ def decode_pysyntax_16bit_to_tuple_str(xyz):
     return (
         str((xyz >> 13) &   7),  # bit 15 - 13 - see version_info[0] - PythonX
         str((xyz >>  8) &  31),  # bit 12 -  8 - see version_info[1] - Pythonx.Y
-        str(xyz        & 255),   # bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y
+        str(xyz         & 255),  # bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y
     )
 
 

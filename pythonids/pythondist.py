@@ -29,6 +29,7 @@ except:
 
 from collections import namedtuple
 
+import pythonids
 from pythonids import PythonIDsError, ISSTR, decode_pysyntax_str_to_num
 
 
@@ -36,7 +37,7 @@ __author__ = 'Arno-Can Uestuensoez'
 __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2010-2018 Arno-Can Uestuensoez" \
                 " @Ingenieurbuero Arno-Can Uestuensoez"
-__version__ = '0.1.31'
+__version__ = '0.1.35'
 __uuid__ = "5624dc41-775a-4d17-ac42-14a0d5c41d1a"
 
 __docformat__ = "restructuredtext en"
@@ -265,14 +266,17 @@ class PythonDistError(PythonIDsError):
 
 
 def _encode_distrel_bitmask(dx=0, dy=0, dz=0):
+    # 32bit - dx.dy.dz
     return (
           (dx & 63) << 12  # bit 17 - 12 - see version_info[0]
-        | (dy & 63) << 6  # bit 11 -  6 - see version_info[1]
-        | (dz & 63)  # bit  5 -  0 - see version_info[2] 
+        | (dy & 63) << 6   # bit 11 -  6 - see version_info[1]
+        | (dz & 63)        # bit  5 -  0 - see version_info[2] 
+
        )
 
 
 def _encode_distrel_str_bitmask(sxyz=''):
+    # 32bit
     res = STR2DISTREL.sub(r'\1', sxyz).split('.')  # variable length
     if len(res) == 3:
         return (
@@ -293,6 +297,7 @@ def _encode_distrel_str_bitmask(sxyz=''):
 
 
 def _encode_disttype_bitmask(sma=0, smi=0):
+    # 32bit
     return (
           (sma & 7) << 28  # bit 30 - 28 - see version_info[0]
         | (smi & 31) << 23  # bit 27 - 23 - see version_info[1]
@@ -300,6 +305,7 @@ def _encode_disttype_bitmask(sma=0, smi=0):
 
 
 def _encode_disttype_str_bitmask(sxy=''):
+    # 32bit
     res = STR2DISTREL.sub(r'\1', sxy).split('.')  # variable length
     if len(res) >= 2:
         return (
@@ -688,6 +694,17 @@ class PythonDist(object):
                     
                     default := False
         
+                valuetype:
+                    Defines the representation of the values - where possible::
+
+                        valuetype := (
+                              raw   # original internal value
+                            | hex   # as hex
+                            | sym   # mapped to symbolic names
+                        )
+                        
+                        default := sym
+
         Returns:
         
             Initial instance, optionally initialized by the provided
@@ -698,7 +715,8 @@ class PythonDist(object):
             
             pass-through
     
-    """
+        """
+        self.valuetype = kargs.get('valuetype', False)
         
         self.category = PYE_PYTHON  # : the category ID
         self.disttype = 0  # : the type ID of the syntax
@@ -953,12 +971,22 @@ class PythonDist(object):
             _cprep = re.sub(
                 r'^([0-9.]+).*\n.*PyPy *([0-9.]+) [^ ]+ ([^ ]+) +([0-9.]+).*$', r'\1@@\2@@\3@@\4', 
                 _c, flags=re.MULTILINE)  # @UndefinedVariable
-            _python_version, _distrel, self.c_compiler, _c_compiler_version = _cprep.split('@@')
+            try:
+                _python_version, _distrel, self.c_compiler, _c_compiler_version = _cprep.split('@@')
+                self.distrel = _encode_distrel_str_bitmask(_distrel)
+            except ValueError:
+                self.distrel = 0
+                _c_compiler_version = ''
+                _python_version = ''
 
-            self.distrel = _encode_distrel_str_bitmask(_distrel)
 
             if _forceall:
-                self.c_compiler_version_tuple = tuple(int(i) for i in _c_compiler_version.split('.')) 
+                try:
+                    self.c_compiler_version_tuple = tuple(int(i) for i in _c_compiler_version.split('.'))
+                except ValueError:
+                    self.c_compiler_version_tuple = ('','',)
+                    pass
+                 
                 self.c_libc_version = platform.libc_ver()  # default is current instance itself
 
                 self.compiler = "Python" 
@@ -1032,32 +1060,142 @@ class PythonDist(object):
 
     def __str__(self):
         ''
-        res = ""
-        try:
-            res += "category           = %s\n" % str(num2name[self.category])
-        except KeyError:
-            res += "category           = \n"
+        return self.pretty_format()
+        
+    def pretty_format(self, **kargs):
+        """Creates printable string of formatted information about the Python implementation.
+        
+        Args:
+            kargs:
+                forceall:
+                    Prints all available information::
 
-        try:
-            res += "disttype           = %s\n" % (num2name[self.disttype])
-        except KeyError:
-            res += "disttype           = \n"
+                        forceall := (
+                              True   # print all including the compiler of the interpreter
+                            | False  # print the interpreter data only 
+                        )
 
-        try:
-            res += "dist               = %s\n" % (num2name[self.dist])
-        except KeyError:
-            res += "dist               = \n"
+                layout:
+                    Defines the displayed layout/syntax::
 
-        res += "distrel            = %s\n" % (decode_pydist_32bit_to_tuple_str(self.distrel).distrel)
-        res += "hexrelease         = 0x%08x\n" % (self.hexrelease)
+                        layout := (
+                              str
+                            | repr
+                            | json
+                        )
 
-        if self.forceall:
-            res += "compiler           = %s\n" % (self.compiler)
-            res += "compiler_version   = %s\n" % '.'.join(str(i) for i in self.compiler_version_tuple)
-            if PYDIST & PYE_DIST == PYE_PYPY:
-                res += "c_compiler         = %s\n" % (self.c_compiler)
-                res += "c_compiler_version = %s\n" % '.'.join(str(i) for i in self.c_compiler_version_tuple)
+                valuetype:
+                    Defines the representation of the values - where possible::
+
+                        valuetype := (
+                              raw   # original internal value
+                            | hex   # as hex
+                            | sym   # mapped to symbolic names
+                        )
+                        
+                        default := sym
+
+        Returns:
+            Formatted string.
+        
+        Raises:
+            pass-through
+            
+        """
+        _forceall = kargs.get('forceall', self.forceall)
+        _valuetype = kargs.get('valuetype', self.valuetype)
+        _layout = kargs.get('layout', 'str')
+
+        _hex = _valuetype == 'hex'
+        _raw = _valuetype == 'raw'
+        
+        def maptostr(r):
+            if _hex:
+                try:
+                    return str(hex(r))
+                except ValueError:
+                    return str(r)
+            
+            if _raw:
+                return str(r)
+            else:
+                try:
+                    return str(num2name[r])
+                except KeyError:
+                    return str(r)
+
+        if _layout == 'str':
+            res = ""
+            _format = "\n%-20s= %s"
                 
+            res += _format % ("category", maptostr(self.category))
+            res += _format % ("disttype", maptostr(self.disttype))
+            res += _format % ("dist", maptostr(self.dist))
+            
+            if _raw or _hex:
+                res += _format % ("distrel", maptostr(self.distrel))
+            else:
+                res += _format % ("distrel", decode_pydist_32bit_to_tuple_str(self.distrel).distrel)
+
+            if _raw:
+                res += _format % ("hexrelease", str(self.hexrelease))
+            else:
+                res += _format % ("hexrelease", hex(self.hexrelease))
+    
+            if _forceall:
+                res += _format % ("compiler", str(self.compiler))
+                res += _format % ("compiler_version", str('.'.join(str(i) for i in self.compiler_version_tuple)))
+                if PYDIST & PYE_DIST == PYE_PYPY:
+                    res += _format % ("compiler", str(self.c_compiler))
+                    res += _format % ("compiler_version", str('.'.join(str(i) for i in self.c_compiler_version_tuple)))
+    
+                res += _format % ("implementation", str(sys.executable))
+
+        elif _layout == 'repr':
+            res = repr(self.get_json())
+
+#             res = "{"
+# 
+#             _format = "\n%-20s= %s"
+#                 
+#             try:
+#                 res += '"category": "' + maptostr(self.category) + '", '
+#             except KeyError:
+#                 res += '"category": "", '
+#     
+#             try:
+#                 res += '"disttype": "' + maptostr(self.disttype) + '", '
+#             except KeyError:
+#                 res += '"disttype": "", '
+#     
+#             try:
+#                 res += '"dist": "' + maptostr(self.dist) + '", '
+#             except KeyError:
+#                 res += '"dist": "", '
+#     
+#             if _raw or _hex:
+#                 res += '"distrel": "' + maptostr(self.distrel) + '", '
+#             else:
+#                 res += '"distrel": "' + str(decode_pydist_32bit_to_tuple_str(self.distrel).distrel) + '", '
+#     
+#             if _raw:
+#                 res += '"hexrelease": ' + str(self.hexrelease) + ', '
+#             else:
+#                 res += '"hexrelease": ' + str(self.hexrelease) + ', '
+#     
+#             if self.forceall:
+#                 res += '"compiler": "' + str(self.compiler) + '", '
+#                 res += '"compiler_version": "' + str('.'.join(str(i) for i in self.compiler_version_tuple)) + '", '
+#                 if PYDIST & PYE_DIST == PYE_PYPY:
+#                     res += '"compiler": ' + str(self.c_compiler) + ', '
+#                     res += '"compiler_version": "' + str('.'.join(str(i) for i in self.c_compiler_version_tuple)) + '", '
+#     
+#                 res += '"implementation": "' + str(sys.executable) + '", '
+# 
+#             res += '}'
+        
+        elif _layout == 'json':
+            res = str(self.get_json())
         return res
 
     def __getattr__(self, name):
@@ -1788,7 +1926,62 @@ class PythonDist(object):
                 pass
             return res
 
+    def get_json(self, **kargs):
+        """Returns an in-memory structure compatible to the package 'json'.
+        
+                forceall:
+                    Includes all available information::
+
+                        forceall := (
+                              True   # including the compiler of the interpreter
+                            | False  # the interpreter data only 
+                        )
+
+                valuetype:
+                    Defines the representation of the values - where possible::
+
+                        valuetype := (
+                              raw   # original internal value
+                            | sym   # mapped to symbolic names
+                        )
+                        
+                        default := sym
+
+        Returns:
+            Formatted string.
+        
+        Raises:
+            pass-through
             
+        """
+        res = {}
+        _valuetype = kargs.get('valuetype', self.raw)
+        def maptostr(r):
+            if _valuetype == 'raw':
+                return r
+            else:
+                try:
+                    return str(num2name[r])
+                except KeyError:
+                    return r
+        
+        res["category"] = maptostr(self.category)
+        res["disttype"] = maptostr(self.disttype)
+        res["dist"] = maptostr(self.dist)
+        res["distrel"] = maptostr(self.distrel)
+        res["hexrelease"] = self.hexrelease
+
+        if self.forceall:
+            res["compiler"] = str(self.compiler)
+            res["compiler_version"] = str('.'.join(str(i) for i in self.compiler_version_tuple))
+            if PYDIST & PYE_DIST == PYE_PYPY:
+                res["compiler"] = str(self.c_compiler)
+                res["compiler_version"] = str('.'.join(str(i) for i in self.c_compiler_version_tuple))
+
+            res["implementation"] = str(sys.executable)
+
+        return res
+    
 #
 # the default is with core attributes only - which almost for sure must not raise exceptions at all
 #

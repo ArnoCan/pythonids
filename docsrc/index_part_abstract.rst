@@ -27,16 +27,18 @@ sets of standard runtime library variants as well as the `Python implementation 
 The *pythonids* provides the automated technical detection and enumeration
 of the `runtime process framework layer of Python environments <python_categorization.html#>`_.
 
-The provided information identifies the
+The identifier are provided by two detail levels. The *Python Syntax* identifier as 16-bit values providing
+the major-minor-micro version, and the 32-bit distribution identifier, which provides in addition the information
+on the distribution.
 
-* **Python Syntax**: 
+* **Python Syntax**:
 
-   :ref:`16-bit hex-value of the Python syntax version <PYTHONSYNTAXVERSIONS>`
+   :ref:`16-bit hex-value of the Python syntax version <PYTHONSYNTAXVERSIONS>` - :ref:`pythonids <PYTHONDISTIDSINIT>`
 
 * **Python Interpreter and Compiler Distribution**: 
 
    :ref:`32-bit hierarchical hex-value of the derived distribution of the Python implementation variant <PYTHONCATEGORIZATION>`
-   including the major and minor Python syntax version
+   including the major and minor Python syntax version - :ref:`pythonids.pydist <PYTHONPARAMS>`
 
 
 

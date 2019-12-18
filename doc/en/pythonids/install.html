@@ -1061,16 +1061,17 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <div class="nonbreakheadtab">
 <div class="autocoltab"><table class="docutils align-default">
 <colgroup>
-<col style="width: 32%" />
-<col style="width: 15%" />
+<col style="width: 28%" />
 <col style="width: 13%" />
-<col style="width: 17%" />
-<col style="width: 15%" />
-<col style="width: 8%" />
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 13%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>OS-distribution</p></th>
-<th class="head" colspan="5"><p>Python implementations</p></th>
+<th class="head" colspan="6"><p>Python implementations</p></th>
 </tr>
 <tr class="row-even"><th class="head"></th>
 <th class="head"><p>CPython</p></th>
@@ -1078,11 +1079,13 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <th class="head"><p>IronPython</p></th>
 <th class="head"><p>Jython(1)</p></th>
 <th class="head"><p>PyPy</p></th>
+<th class="head"><p>Stackless</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-odd"><td><p>AlpineLinux</p></td>
 <td><p>X</p></td>
+<td><p>–</p></td>
 <td><p>–</p></td>
 <td><p>–</p></td>
 <td><p>–</p></td>
@@ -1094,6 +1097,7 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <td><p>–</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
+<td><p>*</p></td>
 </tr>
 <tr class="row-odd"><td><p>Armbian</p></td>
 <td><p>*</p></td>
@@ -1101,9 +1105,11 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <td><p>–</p></td>
 <td><p>–</p></td>
 <td><p>–</p></td>
+<td><p>–</p></td>
 </tr>
 <tr class="row-even"><td><p>CentOS-7-altarch</p></td>
 <td><p>*</p></td>
+<td><p>–</p></td>
 <td><p>–</p></td>
 <td><p>–</p></td>
 <td><p>–</p></td>
@@ -1115,11 +1121,13 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <td><p>–</p></td>
 <td></td>
 <td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>Fedora</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>–</p></td>
+<td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 </tr>
@@ -1129,6 +1137,7 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <td><p>–</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
+<td><p>*</p></td>
 </tr>
 <tr class="row-even"><td><p>MicroPython</p></td>
 <td></td>
@@ -1136,34 +1145,47 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 <td><p>–</p></td>
 <td></td>
 <td></td>
-</tr>
-<tr class="row-odd"><td><p>NetBSD</p></td>
-<td></td>
-<td></td>
-<td><p>–</p></td>
-<td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>OpenBSD</p></td>
+<tr class="row-odd"><td><p>NetBSD - be</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>–</p></td>
+<td></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 </tr>
-<tr class="row-odd"><td><p>Raspbian</p></td>
+<tr class="row-even"><td><p>NetBSD - le</p></td>
+<td><p>*</p></td>
+<td><p>*</p></td>
+<td><p>–</p></td>
+<td></td>
+<td><p>*</p></td>
+<td><p>*</p></td>
+</tr>
+<tr class="row-odd"><td><p>OpenBSD</p></td>
+<td><p>*</p></td>
+<td><p>*</p></td>
+<td><p>–</p></td>
+<td><p>*</p></td>
+<td><p>*</p></td>
+<td><p>*</p></td>
+</tr>
+<tr class="row-even"><td><p>Raspbian</p></td>
 <td><p>*</p></td>
 <td><p>X</p></td>
 <td><p>–</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
+<td><p>*</p></td>
 </tr>
-<tr class="row-even"><td><p>Windows10IoT</p></td>
+<tr class="row-odd"><td><p>Windows10IoT</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>*</p></td>
 <td><p>(*)</p></td>
+<td><p>*</p></td>
 </tr>
 </tbody>
 </table>
@@ -1348,9 +1370,9 @@ with alternative architecture are - RaspberryPI and Asus-TinkerBoard:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

@@ -228,7 +228,7 @@
     <span class="k">return</span> <span class="n">form</span> <span class="o">%</span> <span class="p">(</span>
        <span class="p">(</span><span class="n">xyz</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span>   <span class="mi">7</span><span class="p">,</span>  <span class="c1"># bit 15 - 13 - see version_info[0] - PythonX</span>
        <span class="p">(</span><span class="n">xyz</span> <span class="o">&gt;&gt;</span>  <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="mi">31</span><span class="p">,</span>  <span class="c1"># bit 12 -  8 - see version_info[1] - Pythonx.Y</span>
-        <span class="n">xyz</span>        <span class="o">&amp;</span> <span class="mi">255</span><span class="p">,</span>  <span class="c1"># bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y</span>
+        <span class="n">xyz</span>        <span class="o">&amp;</span> <span class="mi">255</span><span class="p">,</span>  <span class="c1"># bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Z</span>
     <span class="p">)</span></div>
 
 
@@ -252,7 +252,7 @@
     <span class="k">return</span> <span class="p">(</span>
         <span class="nb">str</span><span class="p">((</span><span class="n">xyz</span> <span class="o">&gt;&gt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span>   <span class="mi">7</span><span class="p">),</span>  <span class="c1"># bit 15 - 13 - see version_info[0] - PythonX</span>
         <span class="nb">str</span><span class="p">((</span><span class="n">xyz</span> <span class="o">&gt;&gt;</span>  <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="mi">31</span><span class="p">),</span>  <span class="c1"># bit 12 -  8 - see version_info[1] - Pythonx.Y</span>
-        <span class="nb">str</span><span class="p">(</span><span class="n">xyz</span>        <span class="o">&amp;</span> <span class="mi">255</span><span class="p">),</span>   <span class="c1"># bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">xyz</span>         <span class="o">&amp;</span> <span class="mi">255</span><span class="p">),</span>  <span class="c1"># bit  7 -  0 - see version_info[2] - Pythonx.y - x.y.Y</span>
     <span class="p">)</span></div>
 
 
@@ -401,9 +401,9 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

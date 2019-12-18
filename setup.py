@@ -33,7 +33,7 @@ __license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
 __copyright__ = "Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
 __uuid__ = "7add5ded-c39b-4b6e-8c87-1b3a1c150ee9"
 
-__vers__ = [0, 1, 38,]
+__vers__ = [0, 1, 39,]
 __version__ = "%02d.%02d.%03d"%(__vers__[0],__vers__[1],__vers__[2],)
 __release__ = "%d.%d.%d" % (__vers__[0], __vers__[1], __vers__[2],) + '-rc0'
 __status__ = 'beta'
@@ -105,6 +105,11 @@ setuptools.setup(
     author_email=__author_email__,
     description="The 'pythonids' package provides the identification and enumeration of Python syntax and implementation.",
     download_url="https://sourceforge.net/projects/pythonids/files/",
+    entry_points={
+        'enumerateit.commands': [
+            'prettypyids = pythonids.prettypyids:ppretty_pythonids',
+        ]
+    },
     install_requires=_install_requires,
     license=__license__,
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),

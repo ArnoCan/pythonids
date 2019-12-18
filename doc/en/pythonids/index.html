@@ -195,23 +195,25 @@ thus in case of <em>Python</em>  the distinction of the <a class="reference inte
 sets of standard runtime library variants as well as the <a class="reference external" href="python_categorization.html#">Python implementation</a> releases.
 The <em>pythonids</em> provides the automated technical detection and enumeration
 of the <a class="reference external" href="python_categorization.html#">runtime process framework layer of Python environments</a>.</p>
-<p>The provided information identifies the</p>
+<p>The identifier are provided by two detail levels. The <em>Python Syntax</em> identifier as 16-bit values providing
+the major-minor-micro version, and the 32-bit distribution identifier, which provides in addition the information
+on the distribution.</p>
 <ul>
 <li><p><strong>Python Syntax</strong>:</p>
 <blockquote>
-<div><p><a class="reference internal" href="python_syntax_versions.html#pythonsyntaxversions"><span class="std std-ref">16-bit hex-value of the Python syntax version</span></a></p>
+<div><p><a class="reference internal" href="python_syntax_versions.html#pythonsyntaxversions"><span class="std std-ref">16-bit hex-value of the Python syntax version</span></a> - <a class="reference internal" href="pythonids.html#pythondistidsinit"><span class="std std-ref">pythonids</span></a></p>
 </div></blockquote>
 </li>
 <li><p><strong>Python Interpreter and Compiler Distribution</strong>:</p>
 <blockquote>
 <div><p><a class="reference internal" href="python_categorization.html#pythoncategorization"><span class="std std-ref">32-bit hierarchical hex-value of the derived distribution of the Python implementation variant</span></a>
-including the major and minor Python syntax version</p>
+including the major and minor Python syntax version - <a class="reference internal" href="pythonids.pythondist.html#pythonparams"><span class="std std-ref">pythonids.pydist</span></a></p>
 </div></blockquote>
 </li>
 </ul>
 <p>The package ‘<em>pythonids</em>’ is part of the set of packages of enumerations for efficient and fast operations of
 code variants for software and infrastructure stacks.
-For other stack layers refer to <a class="reference internal" href="references.html#machineids" id="id1"><span>[machineids]</span></a>, <a class="reference internal" href="references.html#platformids" id="id2"><span>[platformids]</span></a>, <a class="reference internal" href="references.html#resourceids" id="id3"><span>[resourceids]</span></a>, and <a class="reference internal" href="references.html#extensionids" id="id4"><span>[extensionids]</span></a>.</p>
+For other stack layers refer to <a class="reference internal" href="references.html#id12" id="id1"><span>[machineids]</span></a>, <a class="reference internal" href="references.html#platformids" id="id2"><span>[platformids]</span></a>, <a class="reference internal" href="references.html#resourceids" id="id3"><span>[resourceids]</span></a>, and <a class="reference internal" href="references.html#extensionids" id="id4"><span>[extensionids]</span></a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Shortcuts</span></p>
 <ul class="current">
@@ -283,10 +285,10 @@ For other stack layers refer to <a class="reference internal" href="references.h
 <li><p>PROJECT=pythonids</p></li>
 <li><p>COPYRIGHT=(C)2019 Arno-Can Uestuensoez</p></li>
 <li><p>LICENSE=Artistic-License-2.0 + Forced-Fairplay-Constraints</p></li>
-<li><p>VERSION=0.1.37</p></li>
-<li><p>RELEASE=0.1.37</p></li>
+<li><p>VERSION=0.1.39</p></li>
+<li><p>RELEASE=0.1.39</p></li>
 <li><p>STATUS=Unknown</p></li>
-<li><p>BUILDDATE=2019.12.13-08:36</p></li>
+<li><p>BUILDDATE=2019.12.18-13:38</p></li>
 </ul>
 <p><a class="reference internal" href="_images/profile_info.png"><img alt="profileinfoidx0" src="_images/profile_info.png" style="width: 64px;" /></a>  <a class="reference internal" href="references.html#xkcd" id="id6"><span>[xkcd]</span></a> <a class="reference internal" href="index_part_license.html#profileinfopage"><span class="std std-ref">Support the OpenSource Authors</span></a></p>
 <span style="page-break-after: always" /></div>
@@ -335,9 +337,9 @@ The <em>UnifiedSessionsManager</em> was originally licensed as <em>GPL3</em>.</p
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

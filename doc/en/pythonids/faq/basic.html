@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Why do I need pythonids? &mdash; pythonids  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="FAQ" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.37
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">PythonIDs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_documents.html">4. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modules.html">5. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_indices.html">6. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_resources.html">7. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">8. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">9. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_license.html">10. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../howto/index.html">Howto</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FAQ</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#basic">Basic</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Why do I need pythonids?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-do-i-need-pythonids-pydist">Why do I need pythonids.pydist?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-yet-another-api">Why yet another API?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pythonids</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">FAQ</a> &raquo;</li>
+        
+      <li>Why do I need pythonids?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/faq/basic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="why-do-i-need-pythonids">
+<span id="faq-basic"></span><h1>Why do I need pythonids?<a class="headerlink" href="#why-do-i-need-pythonids" title="Permalink to this headline">¶</a></h1>
+<p>The module <em>pythonids</em> provides the information of the <em>Python</em> Syntax implementation
+by one integer only.
+Thus specific code segments could be easily addresses from within shared code whithout
+overall performance degradation, actually much faster than manually coding selection.
+In addition there is no need for loading syntax and/or implementation specific code modules.</p>
+<p>The performance impact within large loops - if at all - is kept minimal.</p>
+<p>A prominent example is here the evolution of the <em>collections.namedtuple</em> within the
+syntax and implementation releases of <em>CPython-3.7</em>, which
+supports default values for the implementation of the <em>Python</em> syntax release <em>Python-3.7</em>
+for <em>CPython</em> only since <em>CPython-3.7.0</em> / <em>CPython-3.7.4</em>, see <a class="reference internal" href="../references.html#changelog370beta1" id="id1"><span>[CHANGELOG370beta1]</span></a> and <a class="reference internal" href="../references.html#changelog374rc1" id="id2"><span>[CHANGELOG374rc1]</span></a>.
+Thus a software component for <em>Python-3 &lt;= 3.7.0 / 3.7.4</em> requires modifications, or an alternate module
+like <em>namedtupledefs</em> <a class="reference internal" href="../references.html#namedtupledefs" id="id3"><span>[namedtupledefs]</span></a>.</p>
+</div>
+<div class="section" id="why-do-i-need-pythonids-pydist">
+<h1>Why do I need pythonids.pydist?<a class="headerlink" href="#why-do-i-need-pythonids-pydist" title="Permalink to this headline">¶</a></h1>
+<p>The module <em>pythonids.pydist</em> provides the combined information of the <em>Python</em> implementation
+by one integer only.
+This includes the distribution, the release, and the implemented syntax version.
+Thus specific code segments could be easily addresses from within shared code whithout
+overall performance degradation, actually much faster than manually coding selection.
+In addition there is no need for loading syntax and/or implementation specific code modules.
+The performance impact within large loops - if at all - is kept minimal.</p>
+<p>A prominent example is here the evolution of the <em>collections.namedtuple</em> within the
+syntax and implementation releases of <em>CPython-3.7</em>, which
+supports default values for the implementation of the <em>Python</em> syntax release <em>Python-3.7</em>
+for <em>CPython</em> only since <em>CPython-3.7.0</em> / <em>CPython-3.7.4</em>, see <a class="reference internal" href="../references.html#changelog370beta1" id="id4"><span>[CHANGELOG370beta1]</span></a> and <a class="reference internal" href="../references.html#changelog374rc1" id="id5"><span>[CHANGELOG374rc1]</span></a>.
+This is not available for the implementations of <em>IronPython</em> and <em>Jython</em> as they
+provide the syntax release <em>Python2.7</em>.
+Thus a software components for these implementations require modifications, or an alternate module
+like <em>namedtupledefs2</em> <a class="reference internal" href="../references.html#namedtupledefs2" id="id6"><span>[namedtupledefs2]</span></a>.</p>
+</div>
+<div class="section" id="why-yet-another-api">
+<h1>Why yet another API?<a class="headerlink" href="#why-yet-another-api" title="Permalink to this headline">¶</a></h1>
+<p>The provided API by <em>pythonids</em> is independent from the <em>Python</em> syntax reelases and the
+implementations, see <a class="reference internal" href="../install.html#tested-os-python"><span class="std std-ref">Tested Platforms</span></a>.
+The API of the  <em>pythonids</em> is much more compact and designed for peformance on large number of calls e.g.
+from within loops.
+The API provides detailed information on syntax and implementation by 16bit and 32bit values only, so is prepared
+to be efficiently used on data center apps, client apps, as well as embedded and IoT systems
+e.g. by <em>MicroPython</em> <a class="reference internal" href="../references.html#micropython" id="id7"><span>[MicroPython]</span></a> and <em>CircuitPython</em> <a class="reference internal" href="../references.html#circuitpython" id="id8"><span>[CircuitPython]</span></a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 18, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

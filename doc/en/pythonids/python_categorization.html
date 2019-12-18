@@ -395,7 +395,17 @@ incrementation cycle periods.</p>
 <a class="reference external image-reference" href="_static/bitarray-principle-stack.png"><img alt="_images/bitarray-principle-stack.png" src="_images/bitarray-principle-stack.png" /></a>
 <p class="caption"><span class="caption-text">Figure: bit-mask encoding <a class="reference external" href="_static/bitarray-principle-stack.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
-<p>The visualized mapping scheme with the bit allocation within bytes is</p>
+<p>It is important to note here, that the <em>distrel</em> field enumerates the numbers of the releases of the distribution,
+which is not the implemented <em>Python</em> syntax release.
+The required ranges of the version subfields differ from the syntax versions, e.g. in case of <em>PyPy</em>, which has
+passed the <em>distrel</em> of <em>5.10</em>.
+This is here the <em>major</em> and <em>minor</em> number of the <em>Python2</em> and the <em>Python3</em> release,
+while they differ in the <em>micro</em> version.
+The syntax release is encoded into the <em>disttype</em>, which represents the <em>major</em> and <em>minor</em> version number
+of the implemented <em>Python</em> syntax.
+The <em>micro</em> version number of the syntax is available by
+the <a class="reference internal" href="python_syntax_versions.html#pythonsyntaxversions"><span class="std std-ref">16-bit hex-value of the Python syntax version</span></a> enumeration.</p>
+<p>The visualized mapping scheme with the bit allocation within byte boundaries is given as</p>
 <div class="figure align-center" id="id15" style="width: 450px">
 <a class="reference external image-reference" href="_static/bitarray-principle-stack-bytes.png"><img alt="_images/bitarray-principle-stack-bytes.png" src="_images/bitarray-principle-stack-bytes.png" /></a>
 <p class="caption"><span class="caption-text">Figure: byte maping <a class="reference external" href="_static/bitarray-principle-stack-bytes.png"><img alt="zoom" src="_images/zoom.png" style="width: 16px;" /></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
@@ -552,9 +562,9 @@ The value ranges vary upto 30 for <em>Cython</em>, thus the layout is designed f
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+        &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 13, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>

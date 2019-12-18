@@ -108,8 +108,48 @@ or as numeric representation:
    .. code-block:: python
       :linenos:
    
-      0b0110011000000101 = 031405 = 0x3305 = 13061
+      0b0110011000000101 = 063005 = 0x6605 = 26117
 
+
+For the version *Python-3.7.3* as:
+
+   |bitmaskpyvers373|
+   |bitmaskpyvers373_zoom|
+   
+   .. |bitmaskpyvers373_zoom| imagewrap:: _static/zoom.png
+      :alt: zoom 
+      :target: _static/bitarray-python373.png
+      :width: 16
+   
+   .. |bitmaskpyvers373| imagewrap:: _static/bitarray-python373.png
+      :width: 300
+
+or as numeric representation:
+
+   .. code-block:: python
+      :linenos:
+   
+      0b01100011100000011 = 0143403 = 0xC703 = 50947
+
+For the version *Python-3.8.0* as:
+
+   |bitmaskpyvers380|
+   |bitmaskpyvers380_zoom|
+   
+   .. |bitmaskpyvers380_zoom| imagewrap:: _static/zoom.png
+      :alt: zoom 
+      :target: _static/bitarray-python380.png
+      :width: 16
+   
+   .. |bitmaskpyvers380| imagewrap:: _static/bitarray-python380.png
+      :width: 300
+
+or as numeric representation:
+
+   .. code-block:: python
+      :linenos:
+   
+      0b0110100000000000 = 064000 = 0x6800 = 26624
 
 The features  may in addition vary by the specific platform, which results  
 in several system dependent libraries with a few to significant differences.

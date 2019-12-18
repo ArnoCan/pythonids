@@ -28,11 +28,11 @@ class CallUnits(unittest.TestCase):
         pp = pythonids.pythondist.PythonDist(
             category=PYE_PYTHON
         )
-        resx = """category           = python
-disttype           = 
-dist               = 
-distrel            = 
-hexrelease         = 0x80000000
+        resx = """category            = python
+disttype            = 
+dist                = 
+distrel             = 
+hexrelease          = 0x80000000
 """
 #         print("4TEST: \n" + str(pp))         
 #         print("4TEST: \n" + str(resx))         
@@ -42,11 +42,11 @@ hexrelease         = 0x80000000
         pp = pythonids.pythondist.PythonDist(
             disttype=PYE_PYTHON27,
         )         
-        resx = """category           = python
-disttype           = python2.7
-dist               = 
-distrel            = 
-hexrelease         = 0xa3800000
+        resx = """category            = python
+disttype            = python2.7
+dist                = 
+distrel             = 
+hexrelease          = 0xa3800000
 """
 #         print("4TEST: \n" + str(pp))         
 #         print("4TEST: \n" + str(resx))         
@@ -56,11 +56,11 @@ hexrelease         = 0xa3800000
         pp = pythonids.pythondist.PythonDist(
             dist=PYE_CPYTHON
         )         
-        resx = """category           = python
-disttype           = 
-dist               = cpython
-distrel            = 
-hexrelease         = 0x80040000
+        resx = """category            = python
+disttype            = 
+dist                = cpython
+distrel             = 
+hexrelease          = 0x80040000
 """
 #         print("4TEST: \n" + str(pp))         
 #         print("4TEST: \n" + str(resx))         
@@ -70,11 +70,11 @@ hexrelease         = 0x80040000
         pp = pythonids.pythondist.PythonDist(
             distrel=pythonids.pythondist._encode_distrel_bitmask(*pythonids.decode_pysyntax_16bit_to_tuple(pythonids.PYV27))
         )         
-        resx = """category           = python
-disttype           = 
-dist               = 
-distrel            = 2.7.0
-hexrelease         = 0x800021c0
+        resx = """category            = python
+disttype            = 
+dist                = 
+distrel             = 2.7.0
+hexrelease          = 0x800021c0
 """
 #         print("4TEST: \n" + str(pp))         
 #         print("4TEST: \n" + str(resx))         

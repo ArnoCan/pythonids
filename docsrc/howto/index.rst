@@ -17,8 +17,8 @@ Howto
 
     </style>
 
-Basic
-=====
+Basics
+======
 
 .. toctree::
    :maxdepth: 1

@@ -168,8 +168,18 @@ incrementation cycle periods.
    :target: _static/bitarray-principle-stack.png
    :width: 16
 
-
-The visualized mapping scheme with the bit allocation within bytes is
+It is important to note here, that the *distrel* field enumerates the numbers of the releases of the distribution,
+which is not the implemented *Python* syntax release.
+The required ranges of the version subfields differ from the syntax versions, e.g. in case of *PyPy*, which has 
+passed the *distrel* of *5.10*. 
+This is here the *major* and *minor* number of the *Python2* and the *Python3* release,
+while they differ in the *micro* version.
+The syntax release is encoded into the *disttype*, which represents the *major* and *minor* version number
+of the implemented *Python* syntax.
+The *micro* version number of the syntax is available by 
+the :ref:`16-bit hex-value of the Python syntax version <PYTHONSYNTAXVERSIONS>` enumeration.
+ 
+The visualized mapping scheme with the bit allocation within byte boundaries is given as
 
 .. figure:: _static/bitarray-principle-stack-bytes.png
    :figwidth: 450
