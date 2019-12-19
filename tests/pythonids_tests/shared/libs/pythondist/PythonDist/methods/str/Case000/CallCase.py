@@ -34,8 +34,8 @@ dist                =
 distrel             = 
 hexrelease          = 0x80000000
 """
-#         print("4TEST: \n" + str(pp))         
-#         print("4TEST: \n" + str(resx))         
+#         print("4TEST: \n<" + str(pp) + ">")
+#         print("4TEST: \n<" + str(resx) + ">")         
         self.assertEqual(str(pp), resx)
 
     def testCase020(self):

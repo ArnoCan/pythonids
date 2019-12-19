@@ -187,6 +187,7 @@ PYVxyz = encode_pysyntax_to_16bit(*sys.version_info[:3])
 PYV27X = PYVxyz & PYV27 == PYV27  #: Python2.7
 PYV3X = PYVxyz >= PYV3  #: Python3 
 PYV3X3 = PYVxyz >= PYV3 and PYVxyz < PYV34 #: Python3.0 - Python3.3  
+PYV35Less = PYVxyz < PYV35  #: Python3.0 - 3.4 - partially not supported, at least critical
 PYV35Plus = PYVxyz >= PYV35  #: Python3.5+ - all following
 
 if PYV35Plus:

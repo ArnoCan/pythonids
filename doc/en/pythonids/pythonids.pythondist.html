@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Indices and tables" href="index_part_indices.html" />
+    <link rel="next" title="5.3. pythonids.prettypyids" href="pythonids.prettypyids.html" />
     <link rel="prev" title="5.1. pythonids.__init__" href="pythonids.html" /> 
 </head>
 
@@ -163,6 +163,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#exceptions">5.2.13. Exceptions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="pythonids.prettypyids.html">5.3. pythonids.prettypyids</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">6. Indices and tables</a></li>
@@ -728,7 +729,7 @@ into a dict structure with str names and numeric release vectors.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_segments</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example</span>\<span class="n">_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_segments</span><span class="p">(</span>
    <span class="mh">0xa38421cf</span>
    <span class="p">)</span>
 
@@ -778,7 +779,7 @@ into a dict structure with str names and str representation of releases.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example</span>\<span class="n">_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span>
    <span class="mh">0xa38421cf</span>
    <span class="p">)</span>
 
@@ -827,7 +828,7 @@ into a flat tuple of numbers.</p>
 </dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example</span>\<span class="n">_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">decode_pydist_32bit_to_tuple_str</span><span class="p">(</span>
    <span class="mh">0xa38421cf</span>
    <span class="p">)</span>
 
@@ -876,15 +877,13 @@ release information.</p>
 <blockquote>
 <div><p>For details refer to the component <em>distrel</em> of <a class="reference internal" href="python_categorization.html#bitmasklayoutdist"><span class="std std-ref">Bit Mask Layout</span></a>.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">encode_pydist_to_32bit</span><span class="p">(</span>
-   <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">PYE_CPYTHON</span><span class="p">,</span>
-   <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span>
-   <span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span>
-   <span class="p">)</span>
+<div><pre class="literal-block">example_ = pythonids.pythondist.encode_pydist_to_32bit(
+   pythonids.pythondist.PYE_CPYTHON,
+   2, 7, 15,
+   2,7,
+   )
 
-<span class="n">example</span> <span class="o">=</span> <span class="mh">0xa38421cf</span> <span class="o">=</span> <span class="n">PYE_PYDIST_CPYTHON2715</span>
-</pre></div>
-</div>
+example = 0xa38421cf = PYE_PYDIST_CPYTHON2715</pre>
 </div></blockquote>
 </div></blockquote>
 </dd></dl>
@@ -977,16 +976,14 @@ scale loops with small code sections.</p>
 <blockquote>
 <div><p>For details refer to the component <em>distrel</em> of <a class="reference internal" href="python_categorization.html#bitmasklayoutdist"><span class="std std-ref">Bit Mask Layout</span></a>.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_</span> <span class="o">=</span> <span class="n">pythonids</span><span class="o">.</span><span class="n">pythondist</span><span class="o">.</span><span class="n">encode_pydist_to_32bit</span><span class="p">(</span>
-   <span class="n">category</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">,</span>
-   <span class="n">dist</span><span class="o">=</span><span class="s1">&#39;cpython&#39;</span><span class="p">,</span>
-   <span class="n">distrel</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
-   <span class="n">disttype</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-   <span class="p">)</span>
+<div><pre class="literal-block">example_ = pythonids.pythondist.encode_pydist_to_32bit(
+   category='python',
+   dist='cpython',
+   distrel=(2, 7, 15),
+   disttype=(2, 7),
+   )
 
-<span class="n">example</span> <span class="o">=</span> <span class="mh">0xa38421cf</span> <span class="o">=</span> <span class="n">PYE_PYDIST_CPYTHON2715</span>
-</pre></div>
-</div>
+example = 0xa38421cf = PYE_PYDIST_CPYTHON2715</pre>
 </div></blockquote>
 </div></blockquote>
 </dd></dl>
@@ -1863,7 +1860,7 @@ These are scanned only in case of <em>forceall==True</em>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="index_part_indices.html" class="btn btn-neutral float-right" title="6. Indices and tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pythonids.prettypyids.html" class="btn btn-neutral float-right" title="5.3. pythonids.prettypyids" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pythonids.html" class="btn btn-neutral float-left" title="5.1. pythonids.__init__" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1877,7 +1874,7 @@ These are scanned only in case of <em>forceall==True</em>.</p>
     <p>
         &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 18, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

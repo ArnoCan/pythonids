@@ -266,6 +266,17 @@ Here libraries such as *decimal* provide additional enhancements.
 
 See also section :ref:`PYTHON2VS3INTPERFORMANCE`.
 
+Byteorder - Little and Bi Endian
+--------------------------------
+a.s.a.p
+
+This section is going to be completed, as soon as I managed to get NetBSD cross-build for RaspberryPI 
+as a Big-Endian reference platform.
+
+ 
+See [BYTEORDERHUSEMANN]_, and [BYTEORDERROB]_.
+
+
 Applications of Bit Mask Encryption
 -----------------------------------
 

@@ -1,8 +1,6 @@
 pythonids
 =========
 
-**REMARK**: This is a nightly pre-build with some minor issues, the final release is following within a few days.
-
 The ‘pythonids‘ package provides the enumeration of Python syntaxes and the
 categorization of Python implementations.
 This enables the development of fast and easy portable generic code for arbitrary platforms in IT and IoT landscapes 
@@ -63,7 +61,7 @@ Project Data
 
 * VERSION: 00.01
 
-* RELEASE: 00.01.039
+* RELEASE: 00.01.040
 
 * STATUS: beta
 

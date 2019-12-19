@@ -442,7 +442,7 @@ decode_pydist_32bit_to_tuple_segments
 
    Example::
    
-     example_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_segments(
+     example\_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_segments(
         0xa38421cf
         )
      
@@ -462,7 +462,7 @@ decode_pydist_32bit_to_tuple_str
 
    Example::
    
-      example_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_str(
+      example\_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_str(
          0xa38421cf
          )
       
@@ -482,7 +482,7 @@ decode_pydist_32bit_to_tuple
 
    Example::
    
-      example_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_str(
+      example\_ = pythonids.pythondist.decode_pydist_32bit_to_tuple_str(
          0xa38421cf
          )
       
@@ -506,7 +506,7 @@ encode_pydist_to_32bit
 
          .. parsed-literal::
    
-            example_ = pythonids.pythondist.encode_pydist_to_32bit(
+            example\_ = pythonids.pythondist.encode_pydist_to_32bit(
                pythonids.pythondist.PYE_CPYTHON,
                2, 7, 15,
                2,7,
@@ -527,7 +527,7 @@ encode_pydist_segments_to_32bit
 
          .. parsed-literal::
    
-            example_ = pythonids.pythondist.encode_pydist_to_32bit(
+            example\_ = pythonids.pythondist.encode_pydist_to_32bit(
                category='python',
                dist='cpython',
                distrel=(2, 7, 15),

@@ -70,7 +70,7 @@ various Python implementation and syntax variants.
 
 * **pythonids.PYV35Plus** 
 
-  The flag for the supported *Python Syntax* versions [`pythonids <package_init.html#v3k>`_]:
+  The flag for the supported *Python Syntax* versions [:ref:`pythonids <PYTHONDISTIDSINIT>`]:
 
   .. code-block:: python
      :linenos:
@@ -299,7 +299,7 @@ See also [ISSUE32078]_.
   The simplified portability of encodings for Python2 and Python3
   is supported by the adapted type set *ISSTR* and the
   conditional *unicode* alias
-  [`pythonids <package_init.html#>`_]:
+  [:ref:`pythonids <PYTHONDISTIDSINIT>`]:
    
   .. code-block:: python
      :linenos:

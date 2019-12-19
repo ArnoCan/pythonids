@@ -15,7 +15,7 @@ Command Line Interface
    +-----------------------------------+--------------+----------------------------------------+
    | Command Line Interface            | Call Options | Remarks                                |
    +===================================+==============+========================================+
-   | :ref:`prettypyidsl <PRETTYPYIDS>` | --           | dsiplays Pyton syntax and distribution |
+   | :ref:`prettypyids <PRETTYPYIDS>`  | a.s.a.p.     | displays Pyton syntax and distribution |
    +-----------------------------------+--------------+----------------------------------------+
 
    .. raw:: html

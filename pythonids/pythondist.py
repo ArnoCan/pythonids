@@ -44,9 +44,14 @@ __docformat__ = "restructuredtext en"
 
 
 #
+# the empty record
+#
+PYE_EMPTY = 0x00000000
+
+#
 # separation masks 
 #
-# the combined vector semantics is separative
+# the combined vector semantics os separation masks is separative,
 # thus no hierarchical semantics
 #
 
@@ -187,6 +192,7 @@ dist2num = {
 }
 
 num2name = {
+    PYE_EMPTY: "",
     PYE_CPYTHON: PYE_CPYTHON_NAME,
     PYE_IPYTHON: PYE_IPYTHON_NAME,
     PYE_IRONPYTHON: PYE_IRONPYTHON_NAME,
@@ -202,6 +208,7 @@ num2name = {
 }
 
 num2pretty = {
+    PYE_EMPTY: "",
     PYE_CPYTHON: PYE_CPYTHON_PRETTY,
     PYE_IPYTHON: PYE_IPYTHON_PRETTY,
     PYE_IRONPYTHON: PYE_IRONPYTHON_PRETTY,
@@ -984,8 +991,7 @@ class PythonDist(object):
                 try:
                     self.c_compiler_version_tuple = tuple(int(i) for i in _c_compiler_version.split('.'))
                 except ValueError:
-                    self.c_compiler_version_tuple = ('','',)
-                    pass
+                    self.c_compiler_version_tuple = (0, 0, 0,)
                  
                 self.c_libc_version = platform.libc_ver()  # default is current instance itself
 
@@ -1126,7 +1132,7 @@ class PythonDist(object):
 
         if _layout == 'str':
             res = ""
-            _format = "\n%-20s= %s"
+            _format = "%-20s= %s\n"
                 
             res += _format % ("category", maptostr(self.category))
             res += _format % ("disttype", maptostr(self.disttype))
@@ -1943,6 +1949,7 @@ class PythonDist(object):
                         valuetype := (
                               raw   # original internal value
                             | sym   # mapped to symbolic names
+                            # json and python do not define a native hex type
                         )
                         
                         default := sym

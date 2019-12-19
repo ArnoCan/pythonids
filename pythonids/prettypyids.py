@@ -21,13 +21,12 @@ except SystemExit:
     #  2. if 3x --rdbg-self 
     #
     _s = sys.exc_info()
-    import rdbg
-    if rdbg.my_dbg_self >2 or _s[1] > 0:
+    if '--rdbg-self' in sys.argv or _s[1].code > 0:
         print()
         import traceback
         print(traceback.print_exc())
     print()
-    sys.exit(_s[1])
+    sys.exit(_s[1].code)
 
 except:
     pass

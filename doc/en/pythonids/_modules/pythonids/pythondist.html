@@ -221,9 +221,14 @@
 
 
 <span class="c1">#</span>
+<span class="c1"># the empty record</span>
+<span class="c1">#</span>
+<span class="n">PYE_EMPTY</span> <span class="o">=</span> <span class="mh">0x00000000</span>
+
+<span class="c1">#</span>
 <span class="c1"># separation masks </span>
 <span class="c1">#</span>
-<span class="c1"># the combined vector semantics is separative</span>
+<span class="c1"># the combined vector semantics os separation masks is separative,</span>
 <span class="c1"># thus no hierarchical semantics</span>
 <span class="c1">#</span>
 
@@ -364,6 +369,7 @@
 <span class="p">}</span>
 
 <span class="n">num2name</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">PYE_EMPTY</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">PYE_CPYTHON</span><span class="p">:</span> <span class="n">PYE_CPYTHON_NAME</span><span class="p">,</span>
     <span class="n">PYE_IPYTHON</span><span class="p">:</span> <span class="n">PYE_IPYTHON_NAME</span><span class="p">,</span>
     <span class="n">PYE_IRONPYTHON</span><span class="p">:</span> <span class="n">PYE_IRONPYTHON_NAME</span><span class="p">,</span>
@@ -379,6 +385,7 @@
 <span class="p">}</span>
 
 <span class="n">num2pretty</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">PYE_EMPTY</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">PYE_CPYTHON</span><span class="p">:</span> <span class="n">PYE_CPYTHON_PRETTY</span><span class="p">,</span>
     <span class="n">PYE_IPYTHON</span><span class="p">:</span> <span class="n">PYE_IPYTHON_PRETTY</span><span class="p">,</span>
     <span class="n">PYE_IRONPYTHON</span><span class="p">:</span> <span class="n">PYE_IRONPYTHON_PRETTY</span><span class="p">,</span>
@@ -1161,8 +1168,7 @@
                 <span class="k">try</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_c_compiler_version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
                 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,)</span>
-                    <span class="k">pass</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">c_compiler_version_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,)</span>
                  
                 <span class="bp">self</span><span class="o">.</span><span class="n">c_libc_version</span> <span class="o">=</span> <span class="n">platform</span><span class="o">.</span><span class="n">libc_ver</span><span class="p">()</span>  <span class="c1"># default is current instance itself</span>
 
@@ -1303,7 +1309,7 @@
 
         <span class="k">if</span> <span class="n">_layout</span> <span class="o">==</span> <span class="s1">&#39;str&#39;</span><span class="p">:</span>
             <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="si">%-20s</span><span class="s2">= </span><span class="si">%s</span><span class="s2">&quot;</span>
+            <span class="n">_format</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%-20s</span><span class="s2">= </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span>
                 
             <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">))</span>
             <span class="n">res</span> <span class="o">+=</span> <span class="n">_format</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;disttype&quot;</span><span class="p">,</span> <span class="n">maptostr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">disttype</span><span class="p">))</span>
@@ -2120,6 +2126,7 @@
 <span class="sd">                        valuetype := (</span>
 <span class="sd">                              raw   # original internal value</span>
 <span class="sd">                            | sym   # mapped to symbolic names</span>
+<span class="sd">                            # json and python do not define a native hex type</span>
 <span class="sd">                        )</span>
 <span class="sd">                        </span>
 <span class="sd">                        default := sym</span>
@@ -2193,7 +2200,7 @@
     <p>
         &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 18, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

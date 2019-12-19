@@ -108,7 +108,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#python-performance-on-scalar-integers-bitmasks">4.1.2. Python Performance on Scalar Integers Bitmasks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#operations-on-hierachical-bit-masks">4.1.3. Operations on Hierachical Bit Masks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bit-mask-ranges">4.1.4. Bit Mask Ranges</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#applications-of-bit-mask-encryption">4.1.5. Applications of Bit Mask Encryption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#byteorder-little-and-bi-endian">4.1.5. Byteorder - Little and Bi Endian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#applications-of-bit-mask-encryption">4.1.6. Applications of Bit Mask Encryption</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="python_syntax_versions.html">4.2. Python Syntax Versions</a></li>
@@ -461,8 +462,15 @@ number ranges.
 Here libraries such as <em>decimal</em> provide additional enhancements.</p>
 <p>See also section <a class="reference internal" href="#python2vs3intperformance"><span class="std std-ref">Python Performance on Scalar Integers Bitmasks</span></a>.</p>
 </div>
+<div class="section" id="byteorder-little-and-bi-endian">
+<h2>4.1.5. Byteorder - Little and Bi Endian<a class="headerlink" href="#byteorder-little-and-bi-endian" title="Permalink to this headline">¶</a></h2>
+<p>a.s.a.p</p>
+<p>This section is going to be completed, as soon as I managed to get NetBSD cross-build for RaspberryPI
+as a Big-Endian reference platform.</p>
+<p>See <a class="reference internal" href="references.html#byteorderhusemann" id="id3"><span>[BYTEORDERHUSEMANN]</span></a>, and <a class="reference internal" href="references.html#byteorderrob" id="id4"><span>[BYTEORDERROB]</span></a>.</p>
+</div>
 <div class="section" id="applications-of-bit-mask-encryption">
-<h2>4.1.5. Applications of Bit Mask Encryption<a class="headerlink" href="#applications-of-bit-mask-encryption" title="Permalink to this headline">¶</a></h2>
+<h2>4.1.6. Applications of Bit Mask Encryption<a class="headerlink" href="#applications-of-bit-mask-encryption" title="Permalink to this headline">¶</a></h2>
 <p>The bit-mask operations provide a simple means for the efficient repetitive bulk-processing of
 static numerical threshold dependencies of numeric vectors.
 Prominents applications are</p>
@@ -475,12 +483,12 @@ for this package.</p>
 <p>The platform dependecy on the operating system, the packaged distribution are for
 system development frequently to be checked repetitive.
 Thus the bit mask encryption is a simple means of performance enhancement.</p>
-<p>See <a class="reference internal" href="references.html#platformids" id="id3"><span>[platformids]</span></a>.</p>
+<p>See <a class="reference internal" href="references.html#platformids" id="id5"><span>[platformids]</span></a>.</p>
 </li>
 <li><p>Bit Masks for Machine Platforms</p>
 <p>The base layer of a virtual or physical machine are for system development frequently
 to be checked repetitive.</p>
-<p>See <a class="reference internal" href="references.html#id12" id="id4"><span>[machineids]</span></a>.</p>
+<p>See <a class="reference internal" href="references.html#machineids" id="id6"><span>[machineids]</span></a>.</p>
 </li>
 <li><p>Bit Masks for Python Extensions</p>
 <p>The most of the Python interpreters and compilers provide extension modules for the implementation
@@ -490,7 +498,7 @@ or e.g. as <em>Java</em> extensions for <em>Jython</em>, or <em>IronPython</em> 
 <p>Another approach is here for the <em>C/C++</em> based extensions is the application of <em>Cython</em> or it’s
 predecessor <em>PyRex</em>, which provide compiler for extended native Python.
 Other integration frameworks for extensions include <em>ctypes</em>, <em>CFFI</em>, and <em>SWIG</em>.</p>
-<p>See <a class="reference internal" href="references.html#extensionids" id="id5"><span>[extensionids]</span></a>.</p>
+<p>See <a class="reference internal" href="references.html#extensionids" id="id7"><span>[extensionids]</span></a>.</p>
 </li>
 </ul>
 </div>
@@ -518,7 +526,7 @@ Other integration frameworks for extensions include <em>ctypes</em>, <em>CFFI</e
     <p>
         &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 18, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

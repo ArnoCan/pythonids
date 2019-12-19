@@ -201,6 +201,32 @@ supports default values for the implementation of the <em>Python</em> syntax rel
 for <em>CPython</em> only since <em>CPython-3.7.0</em> / <em>CPython-3.7.4</em>, see <a class="reference internal" href="../references.html#changelog370beta1" id="id1"><span>[CHANGELOG370beta1]</span></a> and <a class="reference internal" href="../references.html#changelog374rc1" id="id2"><span>[CHANGELOG374rc1]</span></a>.
 Thus a software component for <em>Python-3 &lt;= 3.7.0 / 3.7.4</em> requires modifications, or an alternate module
 like <em>namedtupledefs</em> <a class="reference internal" href="../references.html#namedtupledefs" id="id3"><span>[namedtupledefs]</span></a>.</p>
+<p>The full history of the partially incompatible change at the time of writing:</p>
+<ul class="simple">
+<li><p>Changed the implementation strategy for collections.namedtuple() <a class="reference internal" href="../references.html#changelog370alpha1a" id="id4"><span>[CHANGELOG370alpha1a]</span></a> <a class="reference internal" href="../references.html#bpo-28638" id="id5"><span>[bpo-28638]</span></a></p></li>
+<li><p>Fix misspelled attribute name in namedtuple / 3.7.4rc1; <a class="reference internal" href="../references.html#issue36321" id="id6"><span>[issue36321]</span></a></p></li>
+<li><p>Fix wrong usage of collections.namedtuple() <a class="reference internal" href="../references.html#changelog370alpha3" id="id7"><span>[CHANGELOG370alpha3]</span></a> <a class="reference internal" href="../references.html#bpo-31325" id="id8"><span>[bpo-31325]</span></a></p></li>
+<li><p>Optimize namedtuple creation / 3.7.0alpha1; <a class="reference internal" href="../references.html#issue28638" id="id9"><span>[issue28638]</span></a></p></li>
+<li><p>Python function can now have more than 255 parameters. <a class="reference internal" href="../references.html#changelog370alpha1b" id="id10"><span>[CHANGELOG370alpha1b]</span></a> <a class="reference internal" href="../references.html#bpo-18896" id="id11"><span>[bpo-18896]</span></a></p></li>
+<li><p>Remove namedtuple 255 arguments restriction / 3.7.0alpha1; <a class="reference internal" href="../references.html#issue18896" id="id12"><span>[issue18896]</span></a></p></li>
+<li><p>[bpo-18896] see <a class="reference internal" href="../references.html#issue18896" id="id13"><span>[issue18896]</span></a></p></li>
+<li><p>[bpo-28638] see <a class="reference internal" href="../references.html#issue28638" id="id14"><span>[issue28638]</span></a></p></li>
+<li><p>[bpo-31325] see <a class="reference internal" href="../references.html#issue31325" id="id15"><span>[issue31325]</span></a></p></li>
+<li><p>[bpo-32320] see <a class="reference internal" href="../references.html#issue32320" id="id16"><span>[issue32320]</span></a></p></li>
+<li><p>[bpo-36321] see <a class="reference internal" href="../references.html#issue36321" id="id17"><span>[issue36321]</span></a></p></li>
+<li><p>collections.namedtuple() misspelled the name of an attribute <a class="reference internal" href="../references.html#changelog374rc1" id="id18"><span>[CHANGELOG374rc1]</span></a> <a class="reference internal" href="../references.html#bpo-36321" id="id19"><span>[bpo-36321]</span></a></p></li>
+<li><p>collections.namedtuple() now supports default values. / 3.7.0beta1; <a class="reference internal" href="../references.html#issue32320" id="id20"><span>[issue32320]</span></a></p></li>
+<li><p>collections.namedtuple() now supports default values. <a class="reference internal" href="../references.html#changelog370beta1" id="id21"><span>[CHANGELOG370beta1]</span></a> <a class="reference internal" href="../references.html#bpo-32320" id="id22"><span>[bpo-32320]</span></a></p></li>
+<li><p>req_rate is a namedtuple type rather than instance / 3.7.0alpha3; <a class="reference internal" href="../references.html#issue31325" id="id23"><span>[issue31325]</span></a></p></li>
+</ul>
+<p>The provided patched set of libraries for a unified API on Python2 and Python3 (all releases):</p>
+<ul class="simple">
+<li><p>Standard library <a class="reference internal" href="../references.html#namedutple-python3" id="id24"><span>[namedutple-python3]</span></a></p></li>
+<li><p>lib/collections <a class="reference internal" href="../references.html#namedtuple" id="id25"><span>[namedtuple]</span></a></p></li>
+<li><p>patches of <em>collection.namedtuple</em> for Python2 <a class="reference internal" href="../references.html#namedtupledefs2" id="id26"><span>[namedtupledefs2]</span></a></p></li>
+<li><p>patches of <em>collection.namedtuple</em> for Python3 <a class="reference internal" href="../references.html#namedtupledefs3" id="id27"><span>[namedtupledefs3]</span></a></p></li>
+<li><p>patches of <em>collection.namedtuple</em> for Python3 <a class="reference internal" href="../references.html#namedtupledefs" id="id28"><span>[namedtupledefs]</span></a></p></li>
+</ul>
 </div>
 <div class="section" id="why-do-i-need-pythonids-pydist">
 <h1>Why do I need pythonids.pydist?<a class="headerlink" href="#why-do-i-need-pythonids-pydist" title="Permalink to this headline">¶</a></h1>
@@ -214,11 +240,11 @@ The performance impact within large loops - if at all - is kept minimal.</p>
 <p>A prominent example is here the evolution of the <em>collections.namedtuple</em> within the
 syntax and implementation releases of <em>CPython-3.7</em>, which
 supports default values for the implementation of the <em>Python</em> syntax release <em>Python-3.7</em>
-for <em>CPython</em> only since <em>CPython-3.7.0</em> / <em>CPython-3.7.4</em>, see <a class="reference internal" href="../references.html#changelog370beta1" id="id4"><span>[CHANGELOG370beta1]</span></a> and <a class="reference internal" href="../references.html#changelog374rc1" id="id5"><span>[CHANGELOG374rc1]</span></a>.
+for <em>CPython</em> only since <em>CPython-3.7.0</em> / <em>CPython-3.7.4</em>, see <a class="reference internal" href="../references.html#changelog370beta1" id="id29"><span>[CHANGELOG370beta1]</span></a> and <a class="reference internal" href="../references.html#changelog374rc1" id="id30"><span>[CHANGELOG374rc1]</span></a>.
 This is not available for the implementations of <em>IronPython</em> and <em>Jython</em> as they
 provide the syntax release <em>Python2.7</em>.
 Thus a software components for these implementations require modifications, or an alternate module
-like <em>namedtupledefs2</em> <a class="reference internal" href="../references.html#namedtupledefs2" id="id6"><span>[namedtupledefs2]</span></a>.</p>
+like <em>namedtupledefs2</em> <a class="reference internal" href="../references.html#namedtupledefs2" id="id31"><span>[namedtupledefs2]</span></a>.</p>
 </div>
 <div class="section" id="why-yet-another-api">
 <h1>Why yet another API?<a class="headerlink" href="#why-yet-another-api" title="Permalink to this headline">¶</a></h1>
@@ -228,7 +254,7 @@ The API of the  <em>pythonids</em> is much more compact and designed for peforma
 from within loops.
 The API provides detailed information on syntax and implementation by 16bit and 32bit values only, so is prepared
 to be efficiently used on data center apps, client apps, as well as embedded and IoT systems
-e.g. by <em>MicroPython</em> <a class="reference internal" href="../references.html#micropython" id="id7"><span>[MicroPython]</span></a> and <em>CircuitPython</em> <a class="reference internal" href="../references.html#circuitpython" id="id8"><span>[CircuitPython]</span></a>.</p>
+e.g. by <em>MicroPython</em> <a class="reference internal" href="../references.html#micropython" id="id32"><span>[MicroPython]</span></a> and <em>CircuitPython</em> <a class="reference internal" href="../references.html#circuitpython" id="id33"><span>[CircuitPython]</span></a>.</p>
 </div>
 
 
@@ -251,7 +277,7 @@ e.g. by <em>MicroPython</em> <a class="reference internal" href="../references.h
     <p>
         &copy; Copyright Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
       <span class="lastupdated">
-        Last updated on Dec 18, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

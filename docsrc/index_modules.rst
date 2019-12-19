@@ -13,7 +13,7 @@ Modules
    
    pythonids
    pythonids.pythondist
-
+   pythonids.prettypyids
 
 
 
